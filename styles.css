@@ -66,20 +66,21 @@
     .texto-animado-container {
       display: flex;
       align-items: center;
-      gap: 10px; 
-      font-size: 2.5rem; /* Ajusta este valor al tamaño original de tu web */
-      font-family: inherit;
+      gap: 10px;
+      margin: 25px 0;
+      font: 400 clamp(2rem,4vw,3.3rem)/1 var(--serif);
+      letter-spacing: -.05em;
     }
 
     .texto-animado-container h2 {
       margin: 0;
       font-size: inherit;
       font-weight: normal;
-      color: #333; /* Color de tu texto estático */
+      color: var(--ink);
     }
 
     .palabras-ocultas {
-      height: 1.5em; /* Define la altura exacta de una sola línea */
+      height: 1.5em;
       overflow: hidden;
     }
 
@@ -93,19 +94,20 @@
     .lista-palabras li {
       height: 1.5em;
       line-height: 1.5em;
-      color: #ff4500; /* Color de acento para las palabras que cambian */
-      font-weight: bold;
+      color: var(--red);
+      font-weight: 500;
     }
 
-    /* 
-      Los porcentajes de tiempo crean la pausa (hold) y el movimiento.
-      -25% mueve la lista exactamente un elemento hacia arriba. 
-    */
     @keyframes cambiarPalabras {
       0%, 23% { transform: translateY(0); }
       33%, 56% { transform: translateY(-25%); }
       66%, 90% { transform: translateY(-50%); }
       100% { transform: translateY(-75%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .lista-palabras {
+        animation: none;
+      }
     }
     .top {
       position: absolute;
@@ -152,14 +154,6 @@
       gap: 8%;
       align-items: center;
     }
-    .hero h1 {
-      font: 400 clamp(4rem,9vw,8rem)/.84 var(--serif);
-      letter-spacing: -.07em;
-      margin: 25px 0;
-    }
-    .hero h1 em {
-      color: var(--red);
-    }
     .lead {
       max-width: 510px;
       color: #57514d;
@@ -175,9 +169,6 @@
     }
     .btn:hover {
       background: var(--red);
-    }
-    .hero h1 em {
-      color: var(--red);
     }
     .format small {
       color: var(--red);
@@ -581,8 +572,12 @@
       .hero-grid,.about-grid,.contact-grid {
         grid-template-columns: 1fr;
       }
-      .hero h1 {
-        font-size: clamp(3.7rem,16vw,6rem);
+      .texto-animado-container {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: clamp(3rem,12vw,5.5rem);
+        line-height: .9;
+        gap: 0;
       }
       .photo {
         min-height: 390px;
