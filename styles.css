@@ -5,7 +5,7 @@
       --muted: #706963;
       --line: #d4ccc4;
       --brown: #3b211d;
-      --red: #b51f32;
+      --red: #852633;
       --cream: #e6d8cb;
       --graphite: #22242b;
       --indigo: #303d91;
@@ -111,11 +111,45 @@
       }
     }
     .top {
+      --toolbar-background: transparent;
+      --toolbar-text-color: var(--ink);
       position: fixed;
       z-index: 4;
       top: 0;
+      left: 0;
       width: 100%;
       padding: 22px 0;
+      background-color: var(--toolbar-background);
+      color: var(--toolbar-text-color);
+      transition: background-color .4s ease, color .4s ease;
+      opacity: 0.8;
+    }
+    #inicio {
+      --toolbar-background: var(--brown);
+      --toolbar-text-color: var(--paper);
+    }
+    #sobre-mi,
+    #experiencia {
+      --toolbar-background: var(--paper);
+      --toolbar-text-color: var(--brown);
+    }
+    #nichos,
+    #servicios {
+      --toolbar-background: var(--indigo);
+      --toolbar-text-color: var(--paper);
+    }
+    #trabajos{
+      --toolbar-background: var(--red);
+      --toolbar-text-color: var(--paper);
+    }
+    #formatos,
+    #valor {
+      --toolbar-background: var(--paper);
+      --toolbar-text-color: var(--ink);
+    }
+    #contacto {
+      --toolbar-background: var(--graphite);
+      --toolbar-text-color: var(--paper);
     }
     .nav {
       display: flex;
@@ -140,8 +174,9 @@
     .toggle {
       display: none;
       background: none;
-      border: 1px solid currentColor;
+      border: none;
       padding: 8px 12px;
+      color: var(--toolbar-text-color);
     }
     .hero {
       min-height: 100vh;
@@ -507,7 +542,7 @@
       background: var(--graphite);
       color: white;
       padding: 105px 0 50px;
-      position: relative;
+      min-height: 100vh;
     }
     .contact:before {
       content: "";
@@ -515,7 +550,6 @@
       left: 0;
       top: 0;
       width: 8px;
-      height: 100%;
       background: var(--red);
     }
     .contact h2 {
@@ -583,11 +617,11 @@
         top: 58px;
         left: 24px;
         right: 24px;
-        background: var(--paper);
-        color: var(--ink);
+        background-color: var(--toolbar-background);
+        color: var(--toolbar-text-color);
         padding: 20px;
-        box-shadow: 0 12px 30px #0001;
         flex-direction: column;
+        transition: background-color .4s ease, color .4s ease;
       }
       .links.open {
         display: flex;
