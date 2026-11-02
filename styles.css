@@ -4,13 +4,14 @@
       --ink: #211a18;
       --muted: #706963;
       --line: #d4ccc4;
-      --brown: #3b211d;
+      --brown: #412c27;
       --red: #852633;
       --cream: #e6d8cb;
       --graphite: #22242b;
       --indigo: #303d91;
       --mist: #d8dce5;
       --bluepaper: #e9ecf2;
+      --green: #2d4432;
       --serif: 'Playfair Display',Georgia,serif;
       --sans: 'DM Sans',Arial,sans-serif;
     }
@@ -122,18 +123,24 @@
       background-color: var(--toolbar-background);
       color: var(--toolbar-text-color);
       transition: background-color .4s ease, color .4s ease;
-      opacity: 0.8;
+      opacity: 0.9;
     }
     #inicio {
       --toolbar-background: var(--brown);
       --toolbar-text-color: var(--paper);
     }
-    #sobre-mi,
-    #experiencia {
+    #sobre-mi {
       --toolbar-background: var(--paper);
       --toolbar-text-color: var(--brown);
     }
-    #nichos,
+    #experiencia {
+      --toolbar-background: var(--green);
+      --toolbar-text-color: var(--paper);
+    }
+    #nichos {
+      --toolbar-background: var(--indigo);
+      --toolbar-text-color: var(--paper);
+    }
     #servicios {
       --toolbar-background: var(--indigo);
       --toolbar-text-color: var(--paper);
@@ -142,10 +149,13 @@
       --toolbar-background: var(--red);
       --toolbar-text-color: var(--paper);
     }
-    #formatos,
+    #formatos{
+      --toolbar-background: var(--green);
+      --toolbar-text-color: var(--paper);
+    }
     #valor {
-      --toolbar-background: var(--paper);
-      --toolbar-text-color: var(--ink);
+      --toolbar-background: var(--green);
+      --toolbar-text-color: var(--paper);
     }
     #contacto {
       --toolbar-background: var(--graphite);
@@ -165,11 +175,34 @@
       font-size: .78rem;
     }
     .links a {
+      position: relative;
+      display: inline-block;
       opacity: .8;
     }
-    .links a:hover {
-      color: var(--red);
+    .links a::after {
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      left: 0;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+    .links a:hover,
+    .links a:focus-visible {
       opacity: 1;
+    }
+    .links a:hover::after,
+    .links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .links a::after {
+        transition: none;
+      }
     }
     .toggle {
       display: none;
