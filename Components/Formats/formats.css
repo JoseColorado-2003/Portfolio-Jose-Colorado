@@ -1,6 +1,7 @@
 #formatos{
       --toolbar-background: var(--green);
       --toolbar-text-color: var(--paper);
+      --toolbar-logo-color: var(--paper);
     }
 
 .format small {

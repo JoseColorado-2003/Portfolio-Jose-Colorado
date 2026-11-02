@@ -44,6 +44,11 @@ const updateToolbarColor = () => {
     '--toolbar-text-color',
     sectionStyles.getPropertyValue('--toolbar-text-color').trim()
   );
+  toolbar.style.setProperty(
+    '--toolbar-logo-color',
+    sectionStyles.getPropertyValue('--toolbar-logo-color').trim()
+      || sectionStyles.getPropertyValue('--toolbar-text-color').trim()
+  );
 };
 
 const scheduleToolbarColorUpdate = () => {

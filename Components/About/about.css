@@ -1,6 +1,7 @@
 #sobre-mi {
       --toolbar-background: var(--paper);
       --toolbar-text-color: var(--brown);
+      --toolbar-logo-color: var(--brown);
     }
 
 .placeholder {

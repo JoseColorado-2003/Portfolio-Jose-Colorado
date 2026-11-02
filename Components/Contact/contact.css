@@ -1,6 +1,7 @@
 #contacto {
       --toolbar-background: var(--muted);
       --toolbar-text-color: var(--ink);
+      --toolbar-logo-color: var(--ink);
     }
 
 .contact {

@@ -1,6 +1,7 @@
 #experiencia {
       --toolbar-background: var(--green);
       --toolbar-text-color: var(--paper);
+      --toolbar-logo-color: var(--paper);
     }
 
 .experience {
@@ -25,8 +26,8 @@
     }
 
 .experience-card h3 {
-      color: var(--ink);
-      font: 400 1.65rem var(--serif);
+      color: var(--paper);
+      font: bold 1.65rem var(--serif);
       margin: 15px 0;
     }
 

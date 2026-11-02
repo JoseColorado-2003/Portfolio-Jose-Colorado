@@ -1,6 +1,7 @@
 #trabajos{
       --toolbar-background: var(--red);
       --toolbar-text-color: var(--paper);
+      --toolbar-logo-color: var(--paper);
     }
 
 .work-info a {
@@ -70,8 +71,8 @@
       justify-content: flex-end;
       gap: 8px;
       padding: 30px 20px;
-      color: var(--ink);
-      background: linear-gradient(transparent 15%,var(--paper) 100%);
+      color: var(--paper);
+      background: linear-gradient(transparent 15%,var(--ink) 100%);
       transform: translateY(100%);
       visibility: hidden;
       transition: transform .5s ease-in-out, visibility 0s linear .5s;

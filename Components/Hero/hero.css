@@ -36,6 +36,7 @@
 #inicio {
       --toolbar-background: var(--brown);
       --toolbar-text-color: var(--paper);
+      --toolbar-logo-color: var(--paper);
     }
 
 .hero {

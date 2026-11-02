@@ -1,6 +1,7 @@
 #servicios {
       --toolbar-background: var(--indigo);
       --toolbar-text-color: var(--paper);
+      --toolbar-logo-color: var(--paper);
     }
 
 .price {

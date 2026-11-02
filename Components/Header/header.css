@@ -1,6 +1,7 @@
 .top {
       --toolbar-background: transparent;
       --toolbar-text-color: var(--ink);
+      --toolbar-logo-color: var(--toolbar-text-color);
       position: fixed;
       z-index: 4;
       top: 0;
@@ -20,7 +21,18 @@
     }
 
 .brand {
-      font: italic 1rem var(--serif);
+      display: inline-flex;
+      align-items: center;
+    }
+
+.brand-logo {
+      display: block;
+      width: 43px;
+      height: 48px;
+      background-color: var(--toolbar-logo-color);
+      -webkit-mask: url('../../Assets/Images/Logo.svg') center / contain no-repeat;
+      mask: url('../../Assets/Images/Logo.svg') center / contain no-repeat;
+      transition: background-color .4s ease;
     }
 
 .links {

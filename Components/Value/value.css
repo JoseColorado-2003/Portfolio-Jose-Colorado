@@ -1,6 +1,7 @@
 #valor {
       --toolbar-background: var(--green);
       --toolbar-text-color: var(--paper);
+      --toolbar-logo-color: var(--paper);
     }
 
 .value .head .eyebrow {
