@@ -369,12 +369,30 @@
       border-top: 1px solid var(--ink);
     }
     .niche {
+      --niche-description-indent: 78px;
+      padding: 0;
+      border-bottom: 1px solid var(--ink);
+    }
+    .niche summary {
       display: grid;
-      grid-template-columns: 60px 1fr 1.1fr;
+      grid-template-columns: 60px 1fr auto;
       gap: 18px;
       align-items: center;
       padding: 23px 0;
-      border-bottom: 1px solid var(--ink);
+      cursor: pointer;
+      list-style: none;
+    }
+    .niche summary::-webkit-details-marker {
+      display: none;
+    }
+    .niche summary::after {
+      content: "+";
+      color: var(--indigo);
+      font-size: 1.5rem;
+      transition: transform .2s ease;
+    }
+    .niche[open] summary::after {
+      transform: rotate(45deg);
     }
     .niche span {
       color: var(--ink);
@@ -387,8 +405,32 @@
     }
     .niche p {
       color: var(--ink);
-      margin: 0;
+      max-height: 0;
+      margin: 0 0 0 var(--niche-description-indent);
+      overflow: hidden;
       font-size: .88rem;
+      opacity: 0;
+      transition: max-height .8s ease, margin .8s ease, opacity .5s ease;
+    }
+    .niche[open] p {
+      max-height: 12rem;
+      margin: -5px 0 23px var(--niche-description-indent);
+      opacity: 1;
+    }
+    .niche[open].is-closing p {
+      max-height: 0;
+      margin: 0 0 0 var(--niche-description-indent);
+      opacity: 0;
+      transition-duration: .4s, .4s, .3s;
+    }
+    .niche.is-closing summary::after {
+      transform: rotate(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .niche p,
+      .niche summary::after {
+        transition: none;
+      }
     }
     .formats {
       background: var(--paper);
@@ -742,11 +784,12 @@
         gap: 14px;
       }
       .niche {
-        grid-template-columns: 40px 1fr;
-        gap: 12px;
+        --niche-description-indent: 52px;
+        grid-template-columns: 1fr;
       }
-      .niche p {
-        grid-column: 2;
+      .niche summary {
+        grid-template-columns: 40px 1fr auto;
+        gap: 12px;
       }
       .format-grid {
         grid-template-columns: repeat(2,1fr);
