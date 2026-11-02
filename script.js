@@ -24,6 +24,14 @@
         }, sections[0]);
 
         if (currentSection) {
+          links.querySelectorAll('a[href^="#"]').forEach((link) => {
+            if (link.hash === `#${currentSection.id}`) {
+              link.setAttribute('aria-current', 'location');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+
           const sectionStyles = window.getComputedStyle(currentSection);
           toolbar.style.setProperty(
             '--toolbar-background',

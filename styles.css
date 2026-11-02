@@ -192,11 +192,13 @@
       transition: transform .3s ease;
     }
     .links a:hover,
-    .links a:focus-visible {
+    .links a:focus-visible,
+    .links a[aria-current="location"] {
       opacity: 1;
     }
     .links a:hover::after,
-    .links a:focus-visible::after {
+    .links a:focus-visible::after,
+    .links a[aria-current="location"]::after {
       transform: scaleX(1);
     }
     @media (prefers-reduced-motion: reduce) {
