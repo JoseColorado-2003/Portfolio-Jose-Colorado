@@ -1,7 +1,7 @@
       @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
     :root {
       --paper: #f5f2ed;
-      --ink: #211a18;
+      --ink: #000000;
       --muted: #706963;
       --line: #d4ccc4;
       --brown: #412c27;
@@ -9,6 +9,7 @@
       --cream: #e6d8cb;
       --graphite: #22242b;
       --indigo: #303d91;
+      --blue:#aebaff;
       --mist: #d8dce5;
       --bluepaper: #e9ecf2;
       --green: #2d4432;
@@ -234,7 +235,7 @@
     }
     .lead {
       max-width: 510px;
-      color: #57514d;
+      color: var(--ink);
       font-size: 1.05rem;
     }
     .btn {
@@ -291,12 +292,12 @@
       width: 100%;
       height: 100%;
       min-height: 460px;
-      background: #c9c1b8;
+      background: var(--paper);
       display: grid;
       place-items: center;
       text-align: center;
       padding: 28px;
-      color: #55463f;
+      color: var(--ink);
       font-size: .72rem;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -305,10 +306,10 @@
     }
     .about {
       background: var(--brown);
-      color: white;
+      color: var(--paper);
     }
     .about .head p,.about .eyebrow {
-      color: #e4b9ae;
+      color: var(--cream);
     }
     .about-grid {
       display: grid;
@@ -318,21 +319,22 @@
     }
     .about-photo {
       padding: 14px;
-      background: #4b302a;
+      background: var(--brown);
     }
     .about-photo .placeholder {
       min-height: 420px;
-      background: #70564d;
-      color: #f6eee8;
+      background: var(--paper);
+      color: var(--ink);
     }
     .about-copy {
       font: 400 clamp(1.55rem,3vw,2.5rem)/1.3 var(--serif);
     }
     .about-copy em {
-      color: #ff7b79;
+      font-weight: bold;
+      color: var(--graphite);
     }
     .subcopy {
-      color: #e4b9ae;
+      color: var(--paper);
       font-size: .9rem;
     }
     .facts {
@@ -341,11 +343,11 @@
       gap: 18px;
       margin-top: 35px;
       padding-top: 22px;
-      border-top: 1px solid #765047;
+      border-top: 1px solid var(--brown);
     }
     .facts small,.contact small {
       display: block;
-      color: #e4b9ae;
+      color: var(--cream);
       font-size: .65rem;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -359,11 +361,18 @@
       background: var(--bluepaper);
       color: var(--graphite);
     }
+    .niches .head .eyebrow,
+    .pricing .head .eyebrow {
+      color: var(--indigo);
+    }
+    .work .head .eyebrow{
+      color: var(--red);
+    }
     .niches .head p,.work .head p,.pricing .head p {
-      color: #555f73;
+      color: var(--ink);
     }
     .niche-list {
-      border-top: 1px solid #cbd1de;
+      border-top: 1px solid var(--ink);
     }
     .niche {
       display: grid;
@@ -371,7 +380,7 @@
       gap: 18px;
       align-items: center;
       padding: 23px 0;
-      border-bottom: 1px solid #c2c9d7;
+      border-bottom: 1px solid var(--ink);
     }
     .niche span {
       color: var(--indigo);
@@ -382,12 +391,16 @@
       margin: 0;
     }
     .niche p {
-      color: #555f73;
+      color: var(--ink);
       margin: 0;
       font-size: .88rem;
     }
     .formats {
       background: var(--paper);
+    }
+    .formats .head .eyebrow,
+    .value .head .eyebrow {
+      color: var(--red);
     }
     .format-grid {
       display: grid;
@@ -425,7 +438,7 @@
       height: 450px;
       overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,.15);
+      box-shadow: 0 4px 16px var(--red);
     }
     .portada-video {
       position: absolute;
@@ -446,8 +459,8 @@
       justify-content: flex-end;
       gap: 8px;
       padding: 30px 20px;
-      color: white;
-      background: linear-gradient(transparent 15%,rgba(34,36,43,.94) 100%);
+      color: var(--paper);
+      background: linear-gradient(transparent 15%,var(--ink) 100%);
       transform: translateY(100%);
       visibility: hidden;
       transition: transform .5s ease-in-out, visibility 0s linear .5s;
@@ -474,10 +487,11 @@
     }
     .detalles-video h3 {
       margin: 0;
-      color: #ff7b79;
+      color: var(--paper);
       font-size: 1.1rem;
     }
     .detalles-video h4 {
+      color: var(--red);
       margin: 0 0 10px;
       font-size: 1.3rem;
     }
@@ -534,10 +548,10 @@
     }
     .experience {
       background: var(--brown);
-      color: white;
+      color: var(--paper);
     }
     .experience .head p,.experience .eyebrow {
-      color: #e4b9ae;
+      color: var(--cream);
     }
     .experience-grid {
       display: grid;
@@ -545,7 +559,7 @@
       gap: 25px;
     }
     .experience-card {
-      border: 1px solid #765047;
+      border: 1px solid var(--brown);
       padding: 30px;
       min-height: 245px;
     }
@@ -554,16 +568,16 @@
       margin: 15px 0;
     }
     .experience-card p {
-      color: #e1d2ca;
+      color: var(--cream);
       font-size: .88rem;
     }
     .note {
-      color: #e4b9ae;
+      color: var(--cream);
       font-size: .78rem;
       margin-top: 25px;
     }
     .price-list {
-      border-top: 1px solid #cbd1de;
+      border-top: 1px solid var(--indigo);
     }
     .price-row {
       display: grid;
@@ -571,7 +585,7 @@
       gap: 22px;
       align-items: center;
       padding: 26px 0;
-      border-bottom: 1px solid #c2c9d7;
+      border-bottom: 1px solid var(--ink);
     }
     .price-row h3 {
       font: 400 1.45rem var(--serif);
@@ -583,19 +597,19 @@
     }
     .price-row p {
       font-size: .83rem;
-      color: #555f73;
+      color: var(--ink);
       margin: 0;
     }
     .terms {
-      background: #dce1eb;
-      color: #596174;
+      background: var(--blue);
+      color: var(--ink);
       padding: 22px;
       margin-top: 30px;
       font-size: .8rem;
     }
     .contact {
       background: var(--graphite);
-      color: white;
+      color: var(--paper);
       padding: 105px 0 50px;
       min-height: 100vh;
     }
@@ -613,7 +627,7 @@
       margin: 20px 0;
     }
     .contact h2 em {
-      color: #aebaff;
+      color: var(--blue);
     }
     .contact-grid {
       display: grid;
@@ -622,7 +636,7 @@
       align-items: end;
     }
     .contact-copy {
-      color: #c8cbd2;
+      color: var(--paper);
       max-width: 480px;
     }
     .contact-list {
@@ -632,16 +646,19 @@
       margin-top: 45px;
     }
     .contact small {
-      color: #aebaff;
+      color: var(--blue);
+    }
+    .contact > .wrap > .eyebrow {
+      color: var(--blue);
     }
     .qr {
       height: 230px;
-      border: 1px solid #596174;
+      border: 1px solid var(--ink);
       display: grid;
       place-items: center;
       text-align: center;
       padding: 20px;
-      color: #b9c0d2;
+      color: var(--cream);
       font-size: .7rem;
       letter-spacing: .12em;
     }
@@ -651,12 +668,12 @@
     }
     .contact .btn:hover {
       background: var(--indigo);
-      color: white;
+      color: var(--paper);
     }
     footer {
       background: var(--graphite);
-      border-top: 1px solid #4b515d;
-      color: #9ea4b2;
+      border-top: 1px solid var(--ink);
+      color: var(--ink);
       padding: 18px 0;
       font-size: .7rem;
     }

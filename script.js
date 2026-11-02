@@ -32,6 +32,13 @@
       };
 
       workCards.forEach((card) => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-expanded', 'false');
+        card.setAttribute(
+          'aria-label',
+          card.querySelector('.detalles-video h3').textContent.trim()
+        );
+
         card.addEventListener('click', (event) => {
           if (!touchLayout.matches || event.target.closest('a')) {
             return;
