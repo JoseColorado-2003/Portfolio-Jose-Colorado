@@ -9,6 +9,7 @@
       color: var(--ink);
       padding: 105px 0 50px;
       min-height: 100vh;
+      overflow-x: clip;
     }
 
 .contact:before {
