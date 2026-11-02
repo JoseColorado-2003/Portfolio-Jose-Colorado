@@ -2,6 +2,8 @@
       const links = document.getElementById('links');
       const toolbar = document.getElementById('mi-toolbar');
       const sections = document.querySelectorAll('main > section');
+      const workCards = document.querySelectorAll('.tarjeta-trabajo');
+      const touchLayout = window.matchMedia('(hover: none), (max-width: 800px)');
       let sectionUpdateScheduled = false;
 
       toggle.addEventListener('click', () => {
@@ -14,6 +16,38 @@
 
       links.querySelectorAll('a').forEach((a) => {
         a.addEventListener('click', () => links.classList.remove('open'));
+      });
+
+      const toggleWorkCard = (card) => {
+        const shouldOpen = !card.classList.contains('is-open');
+        workCards.forEach((workCard) => {
+          workCard.classList.remove('is-open');
+          workCard.setAttribute('aria-expanded', 'false');
+        });
+
+        if (shouldOpen) {
+          card.classList.add('is-open');
+          card.setAttribute('aria-expanded', 'true');
+        }
+      };
+
+      workCards.forEach((card) => {
+        card.addEventListener('click', (event) => {
+          if (!touchLayout.matches || event.target.closest('a')) {
+            return;
+          }
+
+          toggleWorkCard(card);
+        });
+
+        card.addEventListener('keydown', (event) => {
+          if (event.target !== card || (event.key !== 'Enter' && event.key !== ' ')) {
+            return;
+          }
+
+          event.preventDefault();
+          toggleWorkCard(card);
+        });
       });
 
       const updateToolbarColor = () => {
