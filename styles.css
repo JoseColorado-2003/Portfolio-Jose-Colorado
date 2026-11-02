@@ -42,6 +42,7 @@
       font-weight: 700;
     }
     .section {
+      min-height: 100vh;
       padding: 105px 0;
       overflow: hidden;
     }
@@ -143,7 +144,7 @@
       padding: 8px 12px;
     }
     .hero {
-      min-height: 760px;
+      min-height: 100vh;
       padding: 130px 0 90px;
       display: flex;
       align-items: center;
@@ -566,7 +567,7 @@
         display: block;
       }
       .hero {
-        min-height: 0;
+        min-height: 100vh;
         padding: 120px 0 75px;
       }
       .hero-grid,.about-grid,.contact-grid {
@@ -585,9 +586,6 @@
       }
       .placeholder {
         min-height: 360px;
-      }
-      .section {
-        padding: 76px 0;
       }
       .head {
         display: block;
