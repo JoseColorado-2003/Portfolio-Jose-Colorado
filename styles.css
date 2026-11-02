@@ -2,16 +2,10 @@
     :root {
       --paper: #f5f2ed;
       --ink: #000000;
-      --muted: #706963;
-      --line: #d4ccc4;
+      --muted: #848891;
       --brown: #412c27;
       --red: #852633;
-      --cream: #e6d8cb;
-      --graphite: #22242b;
       --indigo: #303d91;
-      --blue:#aebaff;
-      --mist: #d8dce5;
-      --bluepaper: #e9ecf2;
       --green: #2d4432;
       --serif: 'Playfair Display',Georgia,serif;
       --sans: 'DM Sans',Arial,sans-serif;
@@ -62,7 +56,7 @@
     }
     .head p {
       max-width: 340px;
-      color: var(--muted);
+      color: var(--ink);
       margin: 0;
       font-size: .93rem;
     }
@@ -159,8 +153,8 @@
       --toolbar-text-color: var(--paper);
     }
     #contacto {
-      --toolbar-background: var(--graphite);
-      --toolbar-text-color: var(--paper);
+      --toolbar-background: var(--muted);
+      --toolbar-text-color: var(--ink);
     }
     .nav {
       display: flex;
@@ -263,7 +257,7 @@
       gap: 22px;
       flex-wrap: wrap;
       margin-top: 28px;
-      color: var(--muted);
+      color: var(--ink);
       font-size: .72rem;
       text-transform: uppercase;
       letter-spacing: .07em;
@@ -309,7 +303,7 @@
       color: var(--paper);
     }
     .about .head p,.about .eyebrow {
-      color: var(--cream);
+      color: var(--paper);
     }
     .about-grid {
       display: grid;
@@ -331,7 +325,7 @@
     }
     .about-copy em {
       font-weight: bold;
-      color: var(--graphite);
+      color: var(--ink);
     }
     .subcopy {
       color: var(--paper);
@@ -347,7 +341,7 @@
     }
     .facts small,.contact small {
       display: block;
-      color: var(--cream);
+      color: var(--paper);
       font-size: .65rem;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -358,8 +352,8 @@
       font-weight: 500;
     }
     .niches,.work,.pricing {
-      background: var(--bluepaper);
-      color: var(--graphite);
+      background: var(--paper);
+      color: var(--ink);
     }
     .niches .head .eyebrow,
     .pricing .head .eyebrow {
@@ -383,12 +377,13 @@
       border-bottom: 1px solid var(--ink);
     }
     .niche span {
-      color: var(--indigo);
+      color: var(--ink);
       font-size: .8rem;
     }
     .niche h3 {
       font: 400 clamp(1.4rem,3vw,2.1rem) var(--serif);
       margin: 0;
+      color: var(--indigo);
     }
     .niche p {
       color: var(--ink);
@@ -398,16 +393,18 @@
     .formats {
       background: var(--paper);
     }
-    .formats .head .eyebrow,
+    .formats .head .eyebrow {
+      color: var(--green);
+    }
     .value .head .eyebrow {
-      color: var(--red);
+      color: var(--green);
     }
     .format-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
-      border: 1px solid var(--line);
+      border: 1px solid var(--paper);
       gap: 1px;
-      background: var(--line);
+      background: var(--paper);
     }
     .format {
       background: var(--paper);
@@ -415,15 +412,17 @@
       min-height: 185px;
     }
     .format small {
-      color: var(--red);
+      color: var(--ink);
       font-size: .7rem;
     }
     .format h3 {
       font: 400 1.55rem var(--serif);
       margin: 24px 0 8px;
+      color: var(--green);
+      font-weight: bold;
     }
     .format p {
-      color: var(--muted);
+      color: var(--ink);
       font-size: .86rem;
       margin: 0;
     }
@@ -528,22 +527,24 @@
     }
     .value-item {
       padding: 25px 0;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--paper);
       display: grid;
       grid-template-columns: 45px 1fr;
       gap: 15px;
     }
     .value-item>span {
-      color: var(--red);
+      color: var(--ink);
       font-size: .8rem;
     }
     .value-item h3 {
+      color: var(--green);
       font: 400 1.5rem var(--serif);
       margin: 0 0 8px;
+      font-weight: bold;
     }
     .value-item p {
       margin: 0;
-      color: var(--muted);
+      color: var(--ink);
       font-size: .87rem;
     }
     .experience {
@@ -551,7 +552,7 @@
       color: var(--paper);
     }
     .experience .head p,.experience .eyebrow {
-      color: var(--cream);
+      color: var(--paper);
     }
     .experience-grid {
       display: grid;
@@ -564,20 +565,21 @@
       min-height: 245px;
     }
     .experience-card h3 {
+      color: var(--ink);
       font: 400 1.65rem var(--serif);
       margin: 15px 0;
     }
     .experience-card p {
-      color: var(--cream);
+      color: var(--paper);
       font-size: .88rem;
     }
     .note {
-      color: var(--cream);
+      color: var(--paper);
       font-size: .78rem;
       margin-top: 25px;
     }
     .price-list {
-      border-top: 1px solid var(--indigo);
+      border-top: 1px solid var(--ink);
     }
     .price-row {
       display: grid;
@@ -601,15 +603,15 @@
       margin: 0;
     }
     .terms {
-      background: var(--blue);
-      color: var(--ink);
+      background: var(--indigo);
+      color: var(--paper);
       padding: 22px;
       margin-top: 30px;
       font-size: .8rem;
     }
     .contact {
-      background: var(--graphite);
-      color: var(--paper);
+      background: var(--muted);
+      color: var(--ink);
       padding: 105px 0 50px;
       min-height: 100vh;
     }
@@ -627,7 +629,7 @@
       margin: 20px 0;
     }
     .contact h2 em {
-      color: var(--blue);
+      color: var(--indigo);
     }
     .contact-grid {
       display: grid;
@@ -636,7 +638,7 @@
       align-items: end;
     }
     .contact-copy {
-      color: var(--paper);
+      color: var(--ink);
       max-width: 480px;
     }
     .contact-list {
@@ -646,10 +648,10 @@
       margin-top: 45px;
     }
     .contact small {
-      color: var(--blue);
+      color: var(--ink);
     }
     .contact > .wrap > .eyebrow {
-      color: var(--blue);
+      color: var(--indigo);
     }
     .qr {
       height: 230px;
@@ -658,20 +660,16 @@
       place-items: center;
       text-align: center;
       padding: 20px;
-      color: var(--cream);
+      color: var(--paper);
       font-size: .7rem;
       letter-spacing: .12em;
     }
     .contact .btn {
-      background: var(--paper);
-      color: var(--graphite);
-    }
-    .contact .btn:hover {
       background: var(--indigo);
       color: var(--paper);
     }
     footer {
-      background: var(--graphite);
+      background: var(--muted);
       border-top: 1px solid var(--ink);
       color: var(--ink);
       padding: 18px 0;
