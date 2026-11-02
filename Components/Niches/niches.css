@@ -1,0 +1,77 @@
+#nichos {
+      --toolbar-background: var(--indigo);
+      --toolbar-text-color: var(--paper);
+    }
+
+.niche-list {
+      border-top: 1px solid var(--ink);
+    }
+
+.niche {
+      --niche-description-indent: 78px;
+      padding: 0;
+      border-bottom: 1px solid var(--ink);
+    }
+
+.niche summary {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 23px 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+.niche summary::-webkit-details-marker {
+      display: none;
+    }
+
+.niche summary::after {
+      content: "+";
+      color: var(--indigo);
+      font-size: 1.5rem;
+      transition: transform .2s ease;
+    }
+
+.niche[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+.niche span {
+      color: var(--ink);
+      font-size: .8rem;
+    }
+
+.niche h3 {
+      font: 400 clamp(1.4rem,3vw,2.1rem) var(--serif);
+      margin: 0;
+      color: var(--indigo);
+    }
+
+.niche p {
+      color: var(--ink);
+      max-height: 0;
+      margin: 0 0 0 var(--niche-description-indent);
+      overflow: hidden;
+      font-size: .88rem;
+      opacity: 0;
+      transition: max-height .8s ease, margin .8s ease, opacity .5s ease;
+    }
+
+.niche[open] p {
+      max-height: 12rem;
+      margin: -5px 0 23px var(--niche-description-indent);
+      opacity: 1;
+    }
+
+.niche[open].is-closing p {
+      max-height: 0;
+      margin: 0 0 0 var(--niche-description-indent);
+      opacity: 0;
+      transition-duration: .4s, .4s, .3s;
+    }
+
+.niche.is-closing summary::after {
+      transform: rotate(0);
+    }

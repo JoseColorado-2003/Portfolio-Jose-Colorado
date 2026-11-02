@@ -1,0 +1,42 @@
+#experiencia {
+      --toolbar-background: var(--green);
+      --toolbar-text-color: var(--paper);
+    }
+
+.experience {
+      background: var(--brown);
+      color: var(--paper);
+    }
+
+.experience .head p,.experience .eyebrow {
+      color: var(--paper);
+    }
+
+.experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+.experience-card {
+      border: 1px solid var(--brown);
+      padding: 30px;
+      min-height: 245px;
+    }
+
+.experience-card h3 {
+      color: var(--ink);
+      font: 400 1.65rem var(--serif);
+      margin: 15px 0;
+    }
+
+.experience-card p {
+      color: var(--paper);
+      font-size: .88rem;
+    }
+
+.note {
+      color: var(--paper);
+      font-size: .78rem;
+      margin-top: 25px;
+    }

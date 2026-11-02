@@ -1,0 +1,124 @@
+#trabajos{
+      --toolbar-background: var(--red);
+      --toolbar-text-color: var(--paper);
+    }
+
+.work-info a {
+      color: var(--indigo);
+    }
+
+.work .head .eyebrow{
+      color: var(--red);
+    }
+
+.work-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 28px;
+    }
+
+.tarjeta-trabajo {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px var(--red);
+    }
+
+.portada-video {
+      position: absolute;
+      inset: 0;
+      transition: filter .5s ease-in-out, transform .5s ease-in-out;
+    }
+
+.portada-video img,
+    .portada-video iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+.portada-video img {
+      object-fit: cover;
+    }
+
+.portada-video iframe {
+      border: 0;
+    }
+
+.portada-video .instagram-media {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+.detalles-video {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 30px 20px;
+      color: var(--ink);
+      background: linear-gradient(transparent 15%,var(--paper) 100%);
+      transform: translateY(100%);
+      visibility: hidden;
+      transition: transform .5s ease-in-out, visibility 0s linear .5s;
+    }
+
+.tarjeta-trabajo[aria-expanded="true"] .portada-video {
+      filter: brightness(.3);
+      transform: scale(1.1);
+    }
+
+.tarjeta-trabajo[aria-expanded="true"] .detalles-video {
+      transform: translateY(0);
+      visibility: visible;
+      transition-delay: 0s;
+    }
+
+.detalles-video h3 {
+      margin: 0;
+      color: var(--paper);
+      font-size: 1.1rem;
+    }
+
+.detalles-video h4 {
+      color: var(--red);
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+
+.detalles-video p {
+      margin: 0;
+      font-size: .9rem;
+      line-height: 1.4;
+    }
+
+.btn-ver-video {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      background: var(--red);
+      color: white;
+      text-align: center;
+      font-weight: 600;
+      transition: background .3s ease;
+    }
+
+.btn-ver-video:hover,
+.btn-ver-video:focus-visible {
+      background: var(--brown);
+    }
