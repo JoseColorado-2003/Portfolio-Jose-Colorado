@@ -7,8 +7,17 @@
       </div>
       <p>Reproduce el mismo video de muestra en cada tarjeta.</p>
     </div>
+    <div class="work-filters" aria-label="Filtrar trabajos por nicho">
+      <button class="work-filter is-active" type="button" data-filter="all">Todos</button>
+      <button class="work-filter" type="button" data-filter="lifestyle">Lifestyle</button>
+      <button class="work-filter" type="button" data-filter="tecnologia">Tecnología</button>
+      <button class="work-filter" type="button" data-filter="gastronomia">Gastronomía</button>
+      <button class="work-filter" type="button" data-filter="belleza">Belleza</button>
+      <button class="work-filter" type="button" data-filter="moda">Moda</button>
+      <button class="work-filter" type="button" data-filter="personal-brand">Personal brand</button>
+    </div>
     <div class="work-grid">
-      <article class="tarjeta-trabajo">
+      <article class="tarjeta-trabajo" data-nicho="lifestyle">
         <div class="portada-video">
           <iframe height="578" width="325"
             src="https://www.tiktok.com/player/v1/7697228747463806228?embed_from=webapp_share&amp;music_info=0&amp;description=0&amp;autoplay=1&amp;muted=1&amp;controls=0&amp;progress_bar=0&amp;timestamp=0"
@@ -27,7 +36,7 @@
           <a href="https://www.tiktok.com/player/v1/7697228747463806228?embed_from=webapp_share&amp;music_info=1&amp;description=1&amp;autoplay=1&amp;muted=1" class="btn-ver-video">Ver video ↗</a>
         </div>
       </article>
-      <article class="tarjeta-trabajo">
+      <article class="tarjeta-trabajo" data-nicho="tecnologia">
         <div class="portada-video">
           <iframe width="560" height="315"
             src="https://www.youtube.com/embed/cCEtxQo52Os?si=ZJ9PINX7dbBQNcAf&amp;start=521"
@@ -47,7 +56,7 @@
           <a href="https://www.youtube.com/watch?v=cCEtxQo52Os&amp;t=521s" class="btn-ver-video">Ver video ↗</a>
         </div>
       </article>
-      <article class="tarjeta-trabajo">
+      <article class="tarjeta-trabajo" data-nicho="gastronomia">
         <div class="portada-video">
           <blockquote class="instagram-media"
             data-instgrm-permalink="https://www.instagram.com/reel/DewViM7BYQY/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -65,7 +74,7 @@
           <a href="https://www.instagram.com/reel/DewViM7BYQY/" class="btn-ver-video" target="_blank" rel="noopener noreferrer">Ver video ↗</a>
         </div>
       </article>
-      <article class="tarjeta-trabajo">
+      <article class="tarjeta-trabajo" data-nicho="belleza">
         <div class="portada-video">
           <blockquote class="instagram-media"
             data-instgrm-permalink="https://www.instagram.com/reel/DfN3cs3sip6/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -83,7 +92,7 @@
           <a href="https://www.instagram.com/reel/DfN3cs3sip6/" class="btn-ver-video" target="_blank" rel="noopener noreferrer">Ver video ↗</a>
         </div>
       </article>
-      <article class="tarjeta-trabajo">
+      <article class="tarjeta-trabajo" data-nicho="moda">
         <div class="portada-video">
           <iframe width="560" height="315"
             src="https://www.youtube.com/embed/cCEtxQo52Os?si=ZJ9PINX7dbBQNcAf&amp;start=521"
@@ -103,7 +112,7 @@
           <a href="https://www.youtube.com/watch?v=cCEtxQo52Os&amp;t=521s" class="btn-ver-video">Ver video ↗</a>
         </div>
       </article>
-      <article class="tarjeta-trabajo">
+      <article class="tarjeta-trabajo" data-nicho="personal-brand">
         <div class="portada-video">
           <iframe width="560" height="315"
             src="https://www.youtube.com/embed/cCEtxQo52Os?si=ZJ9PINX7dbBQNcAf&amp;start=521"
