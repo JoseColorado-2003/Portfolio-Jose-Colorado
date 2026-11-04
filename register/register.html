@@ -3,16 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Iniciar sesión</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="./signin.css">
+    <link rel="stylesheet" href="./register.css">
   </head>
   <body>
     <main class="auth-page">
-      <section class="auth-card" aria-labelledby="signin-title">
-        <p class="eyebrow">04 / Acceso</p>
-        <h1 id="signin-title">Iniciar sesión</h1>
+      <section class="auth-card" aria-labelledby="register-title">
+        <h1 id="register-title">Crear cuenta</h1>
         <form class="auth-form">
+          <label>
+            <span>Nombre completo</span>
+            <input type="text" name="name" placeholder="Tu nombre" />
+          </label>
           <label>
             <span>Correo</span>
             <input type="email" name="email" placeholder="tu@correo.com" />
@@ -21,14 +24,14 @@
             <span>Contraseña</span>
             <input type="password" name="password" placeholder="••••••••" />
           </label>
-          <button type="submit">Entrar</button>
+          <button type="submit">Crear cuenta</button>
         </form>
         <nav class="auth-links">
-          <a href="../home/">Volver al inicio</a>
-          <a href="../login/">Crear cuenta</a>
+          <a href="../home/home.html">Volver al inicio</a>
+          <a href="../login/login.html">Iniciar sesión</a>
         </nav>
       </section>
     </main>
-    <script type="module" src="./signin.js"></script>
+    <script type="module" src="./register.js"></script>
   </body>
 </html>

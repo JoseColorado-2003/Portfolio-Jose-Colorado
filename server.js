@@ -1,8 +1,7 @@
 const routes = {
   home: './home/home.html',
   login: './login/login.html',
-  signin: './signIn/signin.html',
-  register: './login/login.html',
+  register: './register/register.html',
 };
 
 const params = new URLSearchParams(window.location.search);

@@ -10,7 +10,8 @@
   width: min(480px, calc(100vw - 32px));
   padding: 32px;
   border: 1px solid var(--ink);
-  background: rgba(255, 255, 255, 0.32);
+  background: var(--paper);
+  border-radius: 10px;
 }
 
 .auth-card h1 {
@@ -44,7 +45,7 @@
   margin-top: 6px;
   border: 0;
   padding: 12px 18px;
-  background: var(--indigo);
+  background: var(--red);
   color: var(--paper);
   font: 700 0.8rem var(--sans);
   letter-spacing: 0.08em;
@@ -61,5 +62,5 @@
 }
 
 .auth-links a {
-  color: var(--indigo);
+  color: var(--red);
 }
