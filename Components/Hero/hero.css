@@ -46,13 +46,49 @@
       display: flex;
       align-items: center;
       overflow: hidden;
+      background: var(--paper);
+      color: var(--brown);
+      isolation: isolate;
     }
 
+.hero-background-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      opacity: 0;
+      pointer-events: none;
+      display: block;
+}
+
+.hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--brown);
+      -webkit-mask-image: url('../../Assets/Images/SVGs/Mosaico.svg');
+      mask-image: url('../../Assets/Images/SVGs/Mosaico.svg');
+      -webkit-mask-repeat: repeat;
+      mask-repeat: repeat;
+      -webkit-mask-size: 38% auto;
+      mask-size: 38% auto;
+      -webkit-mask-position: center;
+      mask-position: center;
+      opacity: 0.1;
+      z-index: 0;
+      pointer-events: none;
+}
+
 .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
-      position: static;
       grid-template-columns: 1fr;
       align-items: center;
+      width: 100%;
     }
 
 .hero-grid > div:first-child {
@@ -93,22 +129,23 @@
 
 .photo {
       position: absolute;
-      inset: 0 0 0 auto;
-      width: 60vw;
-      display: grid;
-      place-items: center;
-      z-index: 0;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      z-index: 1;
     }
 
 .hero-photo {
-      width: 100%;
+      display: block;
+      width: auto;
       height: 100%;
-      min-height: 0;
+      max-width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
       object-fit: contain;
-      position: absolute;
+      object-position: center bottom;
+      position: relative;
       z-index: 1;
-      filter: drop-shadow(0 0 10px var(--brown)) drop-shadow(0 0 10px var(--brown));
-      transform: scale(1.7);
-      transform-origin: center;
-      right: 0;
+      filter: drop-shadow(0 10px 28px var(--brown)) drop-shadow(0 10px 28px var(--brown));
     }
