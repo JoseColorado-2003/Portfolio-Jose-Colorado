@@ -15,8 +15,8 @@
       position: absolute;
       inset: 0;
       background: var(--red);
-      -webkit-mask-image: url('../../Assets/Images/SVGs/MosaicoReproductor.svg');
-      mask-image: url('../../Assets/Images/SVGs/MosaicoReproductor.svg');
+      -webkit-mask-image: url('../../../Assets/Images/SVGs/MosaicoReproductor.svg');
+      mask-image: url('../../../Assets/Images/SVGs/MosaicoReproductor.svg');
       -webkit-mask-repeat: repeat;
       mask-repeat: repeat;
       -webkit-mask-size: 30% auto;

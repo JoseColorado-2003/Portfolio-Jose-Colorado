@@ -15,8 +15,8 @@
       position: absolute;
       inset: 0;
       background: var(--indigo);
-      -webkit-mask-image: url('../../Assets/Images/SVGs/MosaicoMegafono.svg');
-      mask-image: url('../../Assets/Images/SVGs/MosaicoMegafono.svg');
+      -webkit-mask-image: url('../../../Assets/Images/SVGs/MosaicoMegafono.svg');
+      mask-image: url('../../../Assets/Images/SVGs/MosaicoMegafono.svg');
       -webkit-mask-repeat: repeat;
       mask-repeat: repeat;
       -webkit-mask-size: 30% auto;

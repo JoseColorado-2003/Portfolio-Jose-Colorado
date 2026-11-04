@@ -15,8 +15,8 @@
       position: absolute;
       inset: 0;
       background: var(--paper);
-      -webkit-mask-image: url('../../Assets/Images/SVGs/MosaicoTrato.svg');
-      mask-image: url('../../Assets/Images/SVGs/MosaicoTrato.svg');
+      -webkit-mask-image: url('../../../Assets/Images/SVGs/MosaicoTrato.svg');
+      mask-image: url('../../../Assets/Images/SVGs/MosaicoTrato.svg');
       -webkit-mask-repeat: repeat;
       mask-repeat: repeat;
       -webkit-mask-size: 30% auto;

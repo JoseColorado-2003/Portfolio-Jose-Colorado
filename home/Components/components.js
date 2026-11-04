@@ -71,7 +71,11 @@ Object.keys(componentFolders).forEach((tagName) => {
 const components = Array.from(document.querySelectorAll(Object.keys(componentFolders).join(',')));
 await Promise.all(components.map((component) => component.loadPromise));
 
-const sharedStylesheet = document.querySelector('link[rel="stylesheet"][href="styles.css"]');
+const sharedStylesheet = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).find((link) => {
+  const href = (link.getAttribute('href') || '').replace(/\\/g, '/');
+  return href === 'styles.css' || href.endsWith('/styles.css') || href === './styles.css';
+});
+
 if (!sharedStylesheet) {
   throw new Error('No se encontró la hoja de estilos global styles.css');
 }

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./signin.css">
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-card" aria-labelledby="signin-title">
+        <p class="eyebrow">04 / Acceso</p>
+        <h1 id="signin-title">Iniciar sesión</h1>
+        <form class="auth-form">
+          <label>
+            <span>Correo</span>
+            <input type="email" name="email" placeholder="tu@correo.com" />
+          </label>
+          <label>
+            <span>Contraseña</span>
+            <input type="password" name="password" placeholder="••••••••" />
+          </label>
+          <button type="submit">Entrar</button>
+        </form>
+        <nav class="auth-links">
+          <a href="../home/">Volver al inicio</a>
+          <a href="../login/">Crear cuenta</a>
+        </nav>
+      </section>
+    </main>
+    <script type="module" src="./signin.js"></script>
+  </body>
+</html>
