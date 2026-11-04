@@ -4,6 +4,30 @@
       --toolbar-logo-color: var(--brown);
     }
 
+.about {
+      position: relative;
+      background: var(--paper);
+      isolation: isolate;
+    }
+
+.about::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--paper);
+      -webkit-mask-image: url('../../Assets/Images/SVGs/MosaicoLogo.svg');
+      mask-image: url('../../Assets/Images/SVGs/MosaicoLogo.svg');
+      -webkit-mask-repeat: repeat;
+      mask-repeat: repeat;
+      -webkit-mask-size: 30% auto;
+      mask-size: 30% auto;
+      -webkit-mask-position: center;
+      mask-position: center;
+      opacity: .05;
+      pointer-events: none;
+      z-index: 0;
+    }
+
 .placeholder {
       width: 100%;
       height: 100%;

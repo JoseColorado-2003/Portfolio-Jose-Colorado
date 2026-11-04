@@ -69,15 +69,15 @@
       position: absolute;
       inset: 0;
       background: var(--brown);
-      -webkit-mask-image: url('../../Assets/Images/SVGs/Mosaico.svg');
-      mask-image: url('../../Assets/Images/SVGs/Mosaico.svg');
+      -webkit-mask-image: url('../../Assets/Images/SVGs/MosaicoNormal.svg');
+      mask-image: url('../../Assets/Images/SVGs/MosaicoNormal.svg');
       -webkit-mask-repeat: repeat;
       mask-repeat: repeat;
       -webkit-mask-size: 38% auto;
       mask-size: 38% auto;
       -webkit-mask-position: center;
       mask-position: center;
-      opacity: 0.1;
+      opacity: 0.05;
       z-index: 0;
       pointer-events: none;
 }
