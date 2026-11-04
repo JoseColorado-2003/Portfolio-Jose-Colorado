@@ -89,6 +89,15 @@
       transition-delay: 0s;
     }
 
+.tarjeta-nicho {
+      margin: 0;
+      color: var(--paper) ;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
 .detalles-video h3 {
       margin: 0;
       color: var(--paper);

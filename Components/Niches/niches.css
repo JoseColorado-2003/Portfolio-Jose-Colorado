@@ -50,27 +50,193 @@
       color: var(--indigo);
     }
 
+.niche-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 0 0 24px;
+      margin-left: var(--niche-description-indent);
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity .35s ease, max-height .7s ease, padding .35s ease;
+    }
+
+.niche[open] .niche-content {
+      opacity: 1;
+      max-height: 38rem;
+      padding-top: 8px;
+    }
+
+.niche[open].is-closing .niche-content {
+      opacity: 0;
+      max-height: 0;
+      padding-top: 0;
+      transition-duration: .35s, .4s, .25s;
+    }
+
+.niche-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+
 .niche p {
       color: var(--ink);
-      max-height: 0;
-      margin: 0 0 0 var(--niche-description-indent);
-      overflow: hidden;
+      margin: 0;
       font-size: .88rem;
+      max-width: 60ch;
+    }
+
+.niche-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+.niche-carousel {
+      position: relative;
+      display: block;
+      width: min(100%, 540px);
+      height: 220px;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      isolation: isolate;
+      padding: 4px 0 10px;
+      margin: 0 auto;
+    }
+
+.niche-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+.niche-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      overflow: hidden;
+      border: none;
+      color: var(--indigo);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      text-align: center;
       opacity: 0;
-      transition: max-height .8s ease, margin .8s ease, opacity .5s ease;
+      transform: translateX(100%);
+      animation: niche-slider 9s infinite ease-in-out;
+      width: 100%;
+      height: 100%;
+    }
+
+.niche-slide:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+.niche-slide:nth-child(3) {
+      animation-delay: 6s;
+    }
+
+.niche-slide img {
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+      margin: auto;
+    }
+
+.niche-slide span {
+      display: block;
+      padding: 0 18px;
+      opacity: .8;
+    }
+
+.niche-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--indigo);
+      color: var(--paper);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+.niche-button:hover,
+.niche-button:focus-visible {
+      transform: translateY(-1px);
+      background: var(--red);
     }
 
 .niche[open] p {
       max-height: 12rem;
-      margin: -5px 0 23px var(--niche-description-indent);
       opacity: 1;
     }
 
 .niche[open].is-closing p {
       max-height: 0;
-      margin: 0 0 0 var(--niche-description-indent);
       opacity: 0;
-      transition-duration: .4s, .4s, .3s;
+      transition-duration: .4s;
+    }
+
+@keyframes niche-slider {
+      0% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      12% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      38% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      58% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+    }
+
+@media (prefers-reduced-motion: reduce) {
+      .niche-slide {
+        animation: none;
+        opacity: 1;
+        position: absolute;
+        transform: translateX(0);
+      }
+
+      .niche-slide:nth-child(n + 2) {
+        display: none;
+      }
+    }
+
+@media(max-width:800px) {
+      .niche-content {
+        margin-left: 0;
+      }
+
+      .niche-carousel {
+        min-height: 220px;
+      }
     }
 
 .niche.is-closing summary::after {
