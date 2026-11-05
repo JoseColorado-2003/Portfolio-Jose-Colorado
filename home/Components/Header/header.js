@@ -4,16 +4,28 @@ const toolbar = document.getElementById('mi-toolbar');
 const sections = document.querySelectorAll('main > * > section');
 let sectionUpdateScheduled = false;
 
+const setMenuState = (isOpen) => {
+  links.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-expanded', String(isOpen));
+  toggle.textContent = isOpen ? '✕' : '☰';
+  toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+};
+
+setMenuState(false);
+
 toggle.addEventListener('click', () => {
-  links.classList.toggle('open');
-  toggle.setAttribute(
-    'aria-expanded',
-    links.classList.contains('open') ? 'true' : 'false'
-  );
+  const isOpen = !links.classList.contains('open');
+  setMenuState(isOpen);
 });
 
 links.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => links.classList.remove('open'));
+  link.addEventListener('click', () => setMenuState(false));
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 800) {
+    setMenuState(false);
+  }
 });
 
 const updateToolbarColor = () => {

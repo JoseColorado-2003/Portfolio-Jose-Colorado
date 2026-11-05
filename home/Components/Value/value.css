@@ -39,3 +39,21 @@
       color: var(--ink);
       font-size: .87rem;
     }
+
+@media (max-width: 700px) {
+      .value-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .value-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 18px 0;
+      }
+
+      .value-item > span {
+        display: inline-block;
+        min-width: 0;
+      }
+    }

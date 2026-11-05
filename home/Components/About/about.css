@@ -112,3 +112,24 @@
       font-size: .85rem;
       font-weight: 500;
     }
+
+@media (max-width: 700px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .about-photo {
+        display: none;
+      }
+
+      .about-copy {
+        font-size: clamp(1rem, 6vw, 1.6rem);
+        letter-spacing: -.03em;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
