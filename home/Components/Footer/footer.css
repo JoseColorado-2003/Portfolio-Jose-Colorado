@@ -1,0 +1,13 @@
+footer {
+      background: var(--muted);
+      border-top: 1px solid var(--ink);
+      color: var(--ink);
+      padding: 18px 0;
+      font-size: .7rem;
+    }
+
+.foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
