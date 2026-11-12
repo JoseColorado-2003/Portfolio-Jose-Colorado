@@ -61,6 +61,11 @@
       align-items: center;
     }
 
+.about .head h2 {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
 .about-photo {
       padding: 14px;
       background: var(--brown);
@@ -148,6 +153,10 @@
       .about-copy {
         font-size: clamp(1rem, 6vw, 1.6rem);
         letter-spacing: -.03em;
+      }
+
+      .about .head h2 {
+        font-size: clamp(2.3rem, 9vw, 3.5rem);
       }
 
       .facts {

@@ -94,18 +94,23 @@
       .links {
         display: none;
         position: absolute;
-        top: 58px;
-        left: 24px;
-        right: 24px;
+        top: 100%;
+        left: 0;
+        right: 0;
         background-color: var(--toolbar-background);
         color: var(--toolbar-text-color);
-        padding: 20px;
+        padding: 14px 24px 20px;
         flex-direction: column;
+        gap: 0;
         transition: background-color .4s ease, color .4s ease;
       }
 
       .links.open {
         display: flex;
+      }
+
+      .links a {
+        padding: 12px 0;
       }
 
       .toggle {

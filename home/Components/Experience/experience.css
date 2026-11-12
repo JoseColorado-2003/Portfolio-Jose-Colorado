@@ -40,14 +40,16 @@
 
 .experience-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 25px;
     }
 
 .experience-card {
+      min-width: 0;
       border: 1px solid var(--brown);
       padding: 30px;
       min-height: 245px;
+      overflow-wrap: anywhere;
     }
 
 .experience-card h3 {
@@ -65,4 +67,29 @@
       color: var(--paper);
       font-size: .78rem;
       margin-top: 25px;
+    }
+
+@media (max-width: 900px) {
+      .experience .experience-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+
+      .experience .experience-card {
+        width: 100%;
+        min-height: 0;
+        padding: 24px;
+        flex: 0 0 auto;
+      }
+
+      .experience .experience-card h3 {
+        font-size: clamp(1.35rem, 6vw, 1.65rem);
+        overflow-wrap: anywhere;
+      }
+
+      .experience .experience-card p {
+        overflow-wrap: anywhere;
+      }
     }
