@@ -1,157 +1,185 @@
-.texto-animado-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 25px 0;
-      font: 400 clamp(2rem,4vw,3.3rem)/1 var(--serif);
-      letter-spacing: -.05em;
-    }
-
-.texto-animado-container h2 {
-      margin: 0;
-      font-size: inherit;
-      font-weight: normal;
-      color: var(--ink);
-    }
-
-.palabras-ocultas {
-      height: 1.5em;
-      overflow: hidden;
-    }
-
-.lista-palabras {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      animation: cambiarPalabras 7.5s infinite;
-    }
-
-.lista-palabras li {
-      height: 1.5em;
-      line-height: 1.5em;
-      color: var(--red);
-      font-weight: 500;
-    }
-
 #inicio {
-      --toolbar-background: var(--brown);
-      --toolbar-text-color: var(--paper);
-      --toolbar-logo-color: var(--paper);
-    }
+  --toolbar-background: var(--paper);
+  --toolbar-text-color: var(--ink);
+  --toolbar-logo-color: var(--ink);
+}
 
 .hero {
-      position: relative;
-      min-height: 100vh;
-      padding: 130px 0 90px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--paper);
-      color: var(--brown);
-      isolation: isolate;
-    }
-
-.hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--brown);
-      -webkit-mask-image: url('../../../Assets/Images/SVGs/MosaicoNormal.svg');
-      mask-image: url('../../../Assets/Images/SVGs/MosaicoNormal.svg');
-      -webkit-mask-repeat: repeat;
-      mask-repeat: repeat;
-      -webkit-mask-size: 38% auto;
-      mask-size: 38% auto;
-      -webkit-mask-position: center;
-      mask-position: center;
-      opacity: 0.05;
-      z-index: 0;
-      pointer-events: none;
+  position: relative;
+  min-height: 100vh;
+  padding: 130px 0 80px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--paper);
+  isolation: isolate;
 }
 
 .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: center;
-      width: 100%;
-    }
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(32px, 7vw, 100px);
+  align-items: center;
+}
 
 .hero-grid > div:first-child {
-      position: relative;
-      z-index: 2;
-      max-width: 50%;
-    }
+  max-width: 650px;
+}
+
+.hero .eyebrow {
+  color: var(--red);
+}
+
+.hero-name {
+  margin: 26px 0 20px;
+  font: 400 clamp(3rem, 7vw, 6rem)/.92 var(--serif);
+  letter-spacing: -.075em;
+}
+
+.hero-name em {
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--red);
+  font-weight: 400;
+}
+
+.texto-animado-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  color: var(--ink);
+  font: 400 clamp(1.7rem, 3.3vw, 2.8rem)/1.1 var(--serif);
+  letter-spacing: -.05em;
+}
+
+.palabras-ocultas {
+  height: 1.2em;
+  overflow: hidden;
+  color: var(--red);
+}
+
+.lista-palabras {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: cambiarPalabras 7.5s infinite;
+}
+
+.lista-palabras li {
+  height: 1.2em;
+  line-height: 1.2em;
+  font-weight: 500;
+}
 
 .lead {
-      max-width: 510px;
-      color: var(--ink);
-      font-size: 1.05rem;
-    }
+  max-width: 470px;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
 
 .btn {
-      display: inline-block;
-      background: var(--red);
-      color: var(--paper);
-      padding: 13px 19px;
-      margin-top: 26px;
-      font-size: .8rem;
-    }
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--brown);
+  color: var(--paper);
+  padding: 14px 19px;
+  margin-top: 20px;
+  font-size: .8rem;
+  transition: background .2s ease, transform .2s ease;
+}
 
-.btn:hover {
-      background: var(--red);
-    }
+.btn:hover,
+.btn:focus-visible {
+  background: var(--red);
+  transform: translateY(-2px);
+}
+
+.hero-contact {
+  margin-top: 20px;
+  font-size: .82rem;
+  border-bottom: 1px solid currentColor;
+}
 
 .meta {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-      color: var(--ink);
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-    }
+  display: flex;
+  gap: 18px 26px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+  color: var(--brown);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
 
-.photo {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      justify-content: center;
-      z-index: 1;
-    }
+.hero-art {
+  position: relative;
+  z-index: -10;
+  min-height: min(68vh, 650px);
+  background: transparent;
+  overflow: visible;  
+}
 
 .hero-photo {
-      display: block;
-      width: auto;
-      height: 100%;
-      max-width: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -60%);
-      object-fit: contain;
-      object-position: center bottom;
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 10px 28px var(--brown)) drop-shadow(0 10px 28px var(--brown));
-    }
+  position: absolute;
+  right: -16%;
+  bottom: 0;
+  display: block;
+  width: auto;
+  height: 112%;
+  max-width: none;
+  object-fit: contain;
+  object-position: right bottom;
+}
 
-@media (max-width: 700px) {
-      .hero::before {
-        display: none;
-      }
+@media (max-width: 800px) {
+  .hero {
+    min-height: auto;
+    padding: 115px 0 60px;
+  }
 
-      .hero {
-        min-height: auto;
-        padding-top: 110px;
-      }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
 
-      .hero-grid > div:first-child {
-        max-width: 100%;
-      }
+  .hero-name {
+    font-size: clamp(2rem, 10vw, 4.5rem);
+  }
 
-      .photo {
-        display: none;
-      }
-    }
+  .texto-animado-container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .hero-art {
+    min-height: 42vh;
+  }
+
+  .hero-photo {
+    right: -8%;
+    height: 112%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .lista-palabras {
+    animation: none;
+  }
+}
