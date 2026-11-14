@@ -156,7 +156,7 @@ workCards.forEach((card) => {
   });
 
   card.addEventListener('click', (event) => {
-    if (!touchLayout.matches || event.target.closest('a')) {
+    if (!touchLayout.matches || event.target.closest('a, button, video, audio')) {
       return;
     }
 

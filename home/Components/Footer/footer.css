@@ -11,3 +11,7 @@ footer {
       justify-content: space-between;
       gap: 20px;
     }
+
+.foot a {
+      border-bottom: 1px solid currentColor;
+    }
