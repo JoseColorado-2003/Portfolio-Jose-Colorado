@@ -171,4 +171,5 @@ workCards.forEach((card) => {
     event.preventDefault();
     toggleWorkCard(card);
   });
+
 });

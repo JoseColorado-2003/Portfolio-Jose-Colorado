@@ -103,22 +103,17 @@
 
 .hero-art {
   position: relative;
-  z-index: -10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: min(68vh, 650px);
   background: transparent;
-  overflow: visible;  
 }
 
-.hero-photo {
-  position: absolute;
-  right: -16%;
-  bottom: 0;
+.hero-logo {
   display: block;
-  width: auto;
-  height: 112%;
-  max-width: none;
-  object-fit: contain;
-  object-position: right bottom;
+  width: min(65%, 320px);
+  height: auto;
 }
 
 @media (max-width: 800px) {
@@ -143,9 +138,8 @@
     min-height: 42vh;
   }
 
-  .hero-photo {
-    right: -8%;
-    height: 112%;
+  .hero-logo {
+    width: min(55%, 240px);
   }
 }
 

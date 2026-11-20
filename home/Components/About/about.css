@@ -77,31 +77,12 @@
       white-space: nowrap;
     }
 
-.about-photo {
-      padding: 14px;
-      background: var(--brown);
-    }
-
-.about-monogram {
-      display: flex;
-      min-height: 420px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: var(--brown);
-      color: var(--paper);
-    }
-
-.about-monogram img {
-      width: min(34%, 190px);
+.about-photo img {
+      display: block;
+      width: 100%;
       height: auto;
-      filter: brightness(0) invert(1);
-    }
-
-.about-monogram small {
-      margin-top: 24px;
-      font: 600 .65rem var(--sans);
-      letter-spacing: .15em;
+      -webkit-filter: drop-shadow(2px 0 0 var(--paper)) drop-shadow(-2px 0 0 var(--paper)) drop-shadow(0 2px 0 var(--paper)) drop-shadow(0 -2px 0 var(--paper));
+      filter: drop-shadow(2px 0 0 var(--paper)) drop-shadow(-2px 0 0 var(--paper)) drop-shadow(0 2px 0 var(--paper)) drop-shadow(0 -2px 0 var(--paper));
     }
 
 .about-photo .placeholder {
@@ -155,10 +136,6 @@
       .about-grid {
         grid-template-columns: 1fr;
         gap: 24px;
-      }
-
-      .about-photo {
-        display: none;
       }
 
       .about-copy {
