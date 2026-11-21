@@ -8,4 +8,9 @@ const params = new URLSearchParams(window.location.search);
 const page = (params.get('page') || 'home').toLowerCase();
 const target = routes[page] ?? routes.home;
 
-window.location.replace(target);
+document.body.classList.add('is-loading');
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+window.setTimeout(() => {
+  window.location.replace(target);
+}, reducedMotion ? 1000 : 5000);

@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" type="image/x-icon" href="./Assets/Icon/Logo.ico">
   </head>
-  <body>
-    <p>Redirigiendo...</p>
+  <body class="loading-page">
+    <main class="loading-screen" role="status">
+      <span class="loading-logo" aria-hidden="true"></span>
+      <span class="loading-status">Cargando portafolio</span>
+    </main>
+    <noscript>
+      <p class="loading-fallback">Activa JavaScript o <a href="./home/home.html">entra al portafolio</a>.</p>
+    </noscript>
+    <script type="module" src="./server.js"></script>
   </body>
-  <script type="module" src="./server.js"></script>
 </html>
   

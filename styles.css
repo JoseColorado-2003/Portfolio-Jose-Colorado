@@ -44,6 +44,104 @@ textarea {
   font: inherit;
 }
 
+.loading-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.loading-screen {
+  display: grid;
+  place-items: center;
+}
+
+.loading-page.is-loading {
+  overflow: hidden;
+  animation: loading-background 5s ease-in-out forwards;
+}
+
+.loading-logo {
+  display: block;
+  width: clamp(64px, 22vw, 96px);
+  aspect-ratio: 261 / 292;
+  background: var(--red);
+  -webkit-mask: url('./Assets/Images/SVGs/Logo.svg') center / contain no-repeat;
+  mask: url('./Assets/Images/SVGs/Logo.svg') center / contain no-repeat;
+}
+
+.is-loading .loading-logo {
+  animation: loading-movement 5s ease-in-out forwards, loading-colors 5s linear forwards;
+}
+
+.loading-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.loading-fallback {
+  text-align: center;
+}
+
+.loading-fallback a {
+  text-decoration: underline;
+}
+
+@keyframes loading-movement {
+  0% {
+    opacity: 0;
+    transform: translateY(60vh) scale(1);
+  }
+  8% {
+    opacity: 1;
+  }
+  70%, 80% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  94%, 100% {
+    opacity: 0;
+    transform: translateY(0) scale(24);
+  }
+}
+
+@keyframes loading-colors {
+  0% {
+    background-color: var(--paper);
+  }
+  14% {
+    background-color: var(--muted);
+  }
+  28% {
+    background-color: var(--indigo);
+  }
+  42% {
+    background-color: var(--green);
+  }
+  56% {
+    background-color: var(--brown);
+  }
+  70%, 100% {
+    background-color: var(--red);
+  }
+}
+
+@keyframes loading-background {
+  0%, 62% {
+    background-color: var(--ink);
+  }
+  70%, 100% {
+    background-color: var(--paper);
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -177,6 +275,16 @@ textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .loading-page.is-loading,
+  .is-loading .loading-logo {
+    animation: none;
+  }
+
+  .loading-page {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
   .btn,
   .auth-form button {
     transition: none;
