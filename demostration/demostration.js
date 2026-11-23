@@ -1,7 +1,7 @@
 const video = document.getElementById('intro-video');
 
 const redirectHome = () => {
-  window.location.replace('../home/home.html');
+  window.location.replace('../UGC/UGC.html');
 };
 
 if (video) {

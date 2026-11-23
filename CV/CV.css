@@ -1,0 +1,65 @@
+site-header,
+cv-perfil-section,
+cv-experiencia-section,
+cv-educacion-section,
+cv-habilidades-section {
+  display: block;
+}
+
+:where(.cv-section) {
+  --toolbar-background: var(--paper);
+  --toolbar-text-color: var(--ink);
+  --toolbar-logo-color: var(--ink);
+}
+
+.cv-section {
+  min-height: 100vh;
+  padding: 105px 0;
+}
+
+.cv-heading {
+  margin-bottom: 48px;
+}
+
+.cv-heading h2 {
+  margin: 12px 0 0;
+  font: 400 clamp(2.6rem, 6vw, 5rem)/.98 var(--serif);
+  letter-spacing: -.045em;
+}
+
+.cv-heading .eyebrow {
+  color: var(--ink);
+}
+
+.cv-experience .cv-heading .eyebrow,
+.cv-skills .cv-heading .eyebrow {
+  color: var(--paper);
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 30px;
+  padding: 28px 0;
+  border-top: 1px solid currentColor;
+}
+
+.cv-entry h3,
+.cv-entry p {
+  margin: 0 0 10px;
+}
+
+.cv-entry h3 {
+  font: 400 clamp(1.5rem, 3vw, 2rem)/1.2 var(--serif);
+}
+
+.cv-entry ul {
+  margin: 14px 0 0;
+  padding-left: 1.2em;
+}
+
+@media (max-width: 800px) {
+  .cv-section { padding: 80px 0; }
+  .cv-heading { margin-bottom: 35px; }
+  .cv-entry { grid-template-columns: 1fr; gap: 12px; }
+}

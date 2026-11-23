@@ -141,27 +141,6 @@ site-footer {
 }
 
 @media (max-width:800px) {
-  .links {
-    display: none;
-    position: absolute;
-    top: 58px;
-    left: 24px;
-    right: 24px;
-    background-color: var(--toolbar-background);
-    color: var(--toolbar-text-color);
-    padding: 20px;
-    flex-direction: column;
-    transition: background-color .4s ease, color .4s ease;
-  }
-
-  .links.open {
-    display: flex;
-  }
-
-  .toggle {
-    display: block;
-  }
-
   .hero-grid,
   .about-grid,
   .contact-grid {

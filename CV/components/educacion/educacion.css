@@ -1,0 +1,5 @@
+.cv-education {
+  background: var(--paper);
+  color: var(--ink);
+}
+.cv-education .eyebrow { color: var(--ink); }

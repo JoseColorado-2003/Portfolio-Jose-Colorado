@@ -1,7 +1,5 @@
 const componentFolders = {
-  'site-header': 'Header',
   'hero-section': 'Hero',
-  'about-section': 'About',
   'niches-section': 'Niches',
   'formats-section': 'Formats',
   'work-section': 'Work',
@@ -15,7 +13,6 @@ const componentFolders = {
 const revealSelectors = [
   '.wrap > .head',
   '.hero-grid > *',
-  '.about-grid > *',
   '.niche',
   '.format',
   '.tarjeta-trabajo',
@@ -60,6 +57,10 @@ class PortfolioComponent extends HTMLElement {
       stylesheetLoaded,
     ]).then(([markup]) => {
       this.innerHTML = markup;
+      this.querySelectorAll('[src]').forEach((element) => {
+        const src = element.getAttribute('src');
+        element.setAttribute('src', new URL(src, new URL('../UGC.html', import.meta.url)).href);
+      });
     });
   }
 }
@@ -155,8 +156,16 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window) {
 }
 
 await Promise.all([
-  import('./Header/header.js'),
   import('./Niches/niches.js'),
   import('./Work/work.js'),
   import('./Footer/footer.js'),
 ]);
+
+if (document.body.dataset.view === 'home') {
+  const { initToolbar, homeLinks } = await import('../../components/Toolbar/toolbar.js');
+  await initToolbar(document.querySelector('site-header'), {
+    links: [...homeLinks, { label: 'VOLVER', href: '../CV/CV.html' }],
+    sections: document.querySelectorAll('main > * > section'),
+    brandHref: '#inicio',
+  });
+}

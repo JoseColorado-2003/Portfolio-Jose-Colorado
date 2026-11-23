@@ -116,25 +116,7 @@
     }
 
 .niche-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       align-self: center;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--indigo);
-      color: var(--paper);
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      transition: transform .2s ease, background .2s ease;
-    }
-
-.niche-button:hover,
-.niche-button:focus-visible {
-      transform: translateY(-1px);
-      background: var(--red);
     }
 
 .niche[open] p {
