@@ -59,7 +59,7 @@ cv-habilidades-section {
 }
 
 @media (max-width: 800px) {
-  .cv-section { padding: 80px 0; }
+  .cv-section { padding: 115px 0 80px; }
   .cv-heading { margin-bottom: 35px; }
   .cv-entry { grid-template-columns: 1fr; gap: 12px; }
 }
