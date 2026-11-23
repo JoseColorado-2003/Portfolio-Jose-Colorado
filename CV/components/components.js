@@ -3,6 +3,7 @@ const componentFolders = {
   'cv-experiencia-section': 'experiencia',
   'cv-educacion-section': 'educacion',
   'cv-habilidades-section': 'habilidades',
+  'cv-contacto-section': 'contacto',
 };
 
 export const cvLinks = [
@@ -10,6 +11,7 @@ export const cvLinks = [
   { label: 'Experiencia', href: '#cv-experiencia' },
   { label: 'Educación', href: '#cv-educacion' },
   { label: 'Habilidades', href: '#cv-habilidades' },
+  { label: 'Contacto', href: '#cv-contacto' },
 ];
 
 class CVComponent extends HTMLElement {
@@ -36,6 +38,9 @@ class CVComponent extends HTMLElement {
       stylesheetLoaded,
     ]).then(([markup]) => {
       this.innerHTML = markup;
+      this.querySelectorAll('[data-current-year]').forEach((element) => {
+        element.textContent = new Date().getFullYear();
+      });
       this.querySelectorAll('[src]').forEach((element) => {
         element.setAttribute('src', new URL(element.getAttribute('src'), new URL('../../', import.meta.url)).href);
       });
