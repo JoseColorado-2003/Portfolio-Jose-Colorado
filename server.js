@@ -3,6 +3,15 @@ import { loadCVComponents, cvLinks } from './CV/components/components.js';
 
 const views = document.getElementById('views');
 const status = document.getElementById('view-status');
+const app = document.getElementById('app');
+const loadingPage = document.querySelector('.loading-page');
+const intro = Promise.all(
+  loadingPage.getAnimations()
+    .filter((animation) => animation.animationName === 'loading-background')
+    .map((animation) => animation.finished.catch((error) => {
+      if (error.name !== 'AbortError') throw error;
+    }))
+);
 const containers = {};
 const loads = {};
 let navigation = 0;
@@ -98,8 +107,11 @@ async function showRoute() {
       toolbarPromise = initToolbar(document.querySelector('site-header'), config);
     }
     toolbar = await toolbarPromise;
+    await intro;
     if (request !== navigation) return;
     status.hidden = true;
+    loadingPage.remove();
+    app.hidden = false;
     const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
     if (target && containers[page].contains(target)) target.scrollIntoView();
     else window.scrollTo(0, 0);
@@ -108,6 +120,8 @@ async function showRoute() {
     if (request !== navigation) return;
     if (!toolbar) toolbarPromise = null;
     console.error(error);
+    loadingPage.remove();
+    app.hidden = false;
     status.textContent = 'No se pudo cargar la vista. Recarga la página para volver a intentarlo.';
   }
 }

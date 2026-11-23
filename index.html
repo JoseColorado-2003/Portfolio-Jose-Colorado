@@ -23,13 +23,20 @@
     <link rel="icon" type="image/x-icon" href="./Assets/Icon/Logo.ico">
   </head>
   <body>
-    <site-header></site-header>
-    <div id="view-status" role="status">Cargando contenido…</div>
-    <div id="views"></div>
+    <div class="loading-page is-loading">
+      <div class="loading-screen">
+        <div class="loading-logo" role="img" aria-label="Cargando"></div>
+        <div id="loading-status" class="loading-status" role="status">Cargando…</div>
+      </div>
+    </div>
+    <div id="app" hidden>
+      <site-header></site-header>
+      <div id="view-status" role="status">Cargando contenido…</div>
+      <div id="views"></div>
+    </div>
     <noscript>
       <p class="loading-fallback">Activa JavaScript para ver el CV o <a href="./UGC/UGC.html">entra al portafolio</a>.</p>
     </noscript>
     <script type="module" src="./server.js"></script>
   </body>
 </html>
-  
