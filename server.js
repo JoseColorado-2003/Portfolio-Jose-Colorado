@@ -139,9 +139,4 @@ document.addEventListener('click', (event) => {
 
 window.addEventListener('popstate', showRoute);
 
-const legacyPage = new URLSearchParams(location.search).get('page');
-if (legacyPage === 'login' || legacyPage === 'register') {
-  location.replace(new URL(`./${legacyPage}/${legacyPage}.html`, import.meta.url));
-} else {
-  showRoute();
-}
+showRoute();
