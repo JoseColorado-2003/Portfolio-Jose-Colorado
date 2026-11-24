@@ -1,5 +1,5 @@
 import { initToolbar, homeLinks } from './components/Toolbar/toolbar.js';
-import { loadCVComponents, cvLinks } from './CV/components/components.js';
+import { loadCVComponents, cvLinks } from './components/CV/components/components.js';
 
 const views = document.getElementById('views');
 const status = document.getElementById('view-status');
@@ -24,13 +24,13 @@ const routes = {
     links: [...cvLinks, { label: 'UGC', href: '?page=ugc', project: true }],
     brandHref: '#cv-perfil',
     async load(container) {
-      const response = await fetch(new URL('./CV/CV.html', import.meta.url));
+      const response = await fetch(new URL('./components/CV/CV.html', import.meta.url));
       if (!response.ok) throw new Error(`No se pudo cargar el CV: ${response.status}`);
       const page = new DOMParser().parseFromString(await response.text(), 'text/html');
       container.append(page.querySelector('main'));
       const stylesheet = document.createElement('link');
       stylesheet.rel = 'stylesheet';
-      stylesheet.href = new URL('./CV/CV.css', import.meta.url).href;
+      stylesheet.href = new URL('./components/CV/CV.css', import.meta.url).href;
       await Promise.all([
         new Promise((resolve, reject) => {
           stylesheet.addEventListener('load', resolve, { once: true });
@@ -45,19 +45,19 @@ const routes = {
     links: [...homeLinks, { label: 'VOLVER', href: '?page=cv' }],
     brandHref: '#inicio',
     async load(container) {
-      const response = await fetch(new URL('./UGC/UGC.html', import.meta.url));
+      const response = await fetch(new URL('./components/UGC/UGC.html', import.meta.url));
       if (!response.ok) throw new Error(`No se pudo cargar UGC: ${response.status}`);
       const page = new DOMParser().parseFromString(await response.text(), 'text/html');
       container.append(page.querySelector('main'), page.querySelector('site-footer'));
       const stylesheet = document.createElement('link');
       stylesheet.rel = 'stylesheet';
-      stylesheet.href = new URL('./UGC/UGC.css', import.meta.url).href;
+      stylesheet.href = new URL('./components/UGC/UGC.css', import.meta.url).href;
       await new Promise((resolve, reject) => {
         stylesheet.addEventListener('load', resolve, { once: true });
         stylesheet.addEventListener('error', () => reject(new Error('No se pudieron cargar los estilos de UGC')), { once: true });
         document.head.append(stylesheet);
       });
-      await import('./UGC/Components/components.js');
+      await import('./components/UGC/Components/components.js');
     },
   },
 };
