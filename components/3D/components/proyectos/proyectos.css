@@ -1,0 +1,143 @@
+.portfolio-3d .three-work {
+  --toolbar-background: #e8e2d9;
+  --toolbar-text-color: var(--ink);
+  scroll-margin-top: 0;
+  padding: 105px 0;
+  background: #e8e2d9;
+}
+
+.three-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.three-heading > p {
+  max-width: 320px;
+  margin: 0;
+}
+
+.three-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(30px, 5vw, 70px);
+}
+
+.three-viewer-panel {
+  padding: 22px;
+  background: var(--paper);
+}
+
+.three-viewer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.three-stage {
+  display: grid;
+  place-items: center;
+  min-height: 380px;
+  margin: 20px 0;
+  background: #d9d1c7;
+}
+
+.three-placeholder {
+  max-width: 260px;
+  padding: 20px;
+  text-align: center;
+}
+
+.three-stage model-viewer:not([hidden]) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+}
+
+.three-viewer-status {
+  min-height: 1.6em;
+  margin: 0 0 12px;
+  font-size: .85rem;
+}
+
+.three-empty {
+  font-size: .85rem;
+}
+
+.three-model-info {
+  border-top: 1px solid #ada398;
+  padding-top: 20px;
+}
+
+.three-model-info .three-kicker {
+  margin-bottom: 10px;
+}
+
+.three-model-info h3 {
+  margin: 0 0 8px;
+  font: 400 1.5rem var(--serif);
+}
+
+.three-model-info p:not(.three-kicker) {
+  margin: 0;
+  font-size: .9rem;
+}
+
+.three-project {
+  display: grid;
+  width: 100%;
+  gap: 8px;
+  padding: 22px 0;
+  border: 0;
+  border-top: 1px solid #ada398;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.three-project strong {
+  font: 400 1.5rem var(--serif);
+}
+
+.three-project span {
+  font-size: .9rem;
+}
+
+.three-project:hover strong,
+.three-project:focus-visible strong,
+.three-project[aria-pressed="true"] strong {
+  color: var(--red);
+}
+
+@media (max-width: 800px) {
+  .portfolio-3d .three-work {
+    padding: 115px 0 80px;
+  }
+
+  .three-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .three-heading {
+    display: block;
+  }
+
+  .three-heading > p {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .three-stage,
+  .three-stage model-viewer:not([hidden]) {
+    min-height: 280px;
+  }
+}

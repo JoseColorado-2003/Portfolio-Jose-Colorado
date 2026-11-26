@@ -104,28 +104,36 @@ export async function initToolbar(host, initialConfig) {
   function configure({ links: items, sections: viewSections, brandHref }) {
     sections = Array.from(viewSections);
     brand.href = brandHref;
-    links.replaceChildren(...items.map(({ label, href, project }) => {
+    let projectMenu;
+    const navigationItems = [];
+    items.forEach(({ label, href, project }) => {
       const link = document.createElement('a');
       link.textContent = label;
       link.setAttribute('href', href);
-      if (!project) return link;
+      if (!project) {
+        navigationItems.push(link);
+        return;
+      }
 
-      const wrapper = document.createElement('div');
-      wrapper.className = 'toolbar-projects';
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'toolbar-project-toggle';
-      button.setAttribute('aria-expanded', 'false');
-      button.setAttribute('aria-controls', 'toolbar-project-menu');
-      button.textContent = 'Proyectos';
-      const menu = document.createElement('div');
-      menu.className = 'toolbar-project-menu';
-      menu.id = 'toolbar-project-menu';
-      menu.hidden = true;
-      menu.append(link);
-      wrapper.append(button, menu);
-      return wrapper;
-    }));
+      if (!projectMenu) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'toolbar-projects';
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'toolbar-project-toggle';
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', 'toolbar-project-menu');
+        button.textContent = 'Proyectos';
+        projectMenu = document.createElement('div');
+        projectMenu.className = 'toolbar-project-menu';
+        projectMenu.id = 'toolbar-project-menu';
+        projectMenu.hidden = true;
+        wrapper.append(button, projectMenu);
+        navigationItems.push(wrapper);
+      }
+      projectMenu.append(link);
+    });
+    links.replaceChildren(...navigationItems);
     setMenuState(false);
     update();
   }

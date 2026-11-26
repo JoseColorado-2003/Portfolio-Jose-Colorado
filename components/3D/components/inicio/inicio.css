@@ -1,0 +1,56 @@
+.three-hero {
+  --toolbar-background: var(--paper);
+  --toolbar-text-color: var(--ink);
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  background: var(--paper);
+}
+
+.three-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 8vw, 120px);
+}
+
+.three-lead {
+  max-width: 470px;
+  margin: 30px 0;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.three-hero-art {
+  min-height: 440px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #cfc7bc;
+  background: radial-gradient(circle at center, #e4d9ce 0, var(--paper) 70%);
+  color: var(--brown);
+}
+
+.three-hero-art span {
+  font: italic 400 clamp(8rem, 20vw, 19rem)/1 var(--serif);
+  letter-spacing: -.12em;
+  padding-right: .12em;
+}
+
+.three-hero-art small {
+  margin-top: 20px;
+  font-size: .65rem;
+  letter-spacing: .2em;
+}
+
+@media (max-width: 800px) {
+  .three-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .three-hero-art {
+    min-height: 280px;
+    max-height: 420px;
+  }
+}

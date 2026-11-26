@@ -11,3 +11,13 @@ Los componentes del portafolio UGC están en `UGC/Components/`. `UGC/Components/
 Dirección visual: paleta neutra de negro, blanco roto, gris y beige; fondos claros y oscuros alternados; tipografía editorial serif combinada con sans serif; alto contraste y composiciones limpias.
 
 No publiques colaboraciones, resultados ni testimonios que no sean reales. El sitio es estático y no necesita backend.
+
+PORTAFOLIO 3D
+
+La nueva vista está disponible desde Proyectos en el CV, en `?page=3d` o directamente en `components/3D/3D.html`. Sus archivos están en `components/3D/`. Para publicar un proyecto, guarda su modelo GLB (o glTF con sus recursos asociados) en el sitio y añade una entrada en `components/3D/projects.js`, por ejemplo:
+
+  { title: 'Mi proyecto', description: 'Descripción del proyecto', model: '../../Assets/3D/mi-proyecto.glb' }
+
+Las secciones de inicio, proyectos y contacto están en `components/3D/components/`, cada una con su HTML, CSS y JS. `components/3D/components/components.js` carga los componentes y `proyectos/proyectos.js` controla el visor. La ruta del modelo se interpreta desde `components/3D/3D.js`. Se pueden añadir varias entradas separadas por comas: el primer proyecto se muestra automáticamente y se puede seleccionar otro de la lista. Sin proyectos, se muestra un mensaje en lugar de contenido ficticio.
+
+El visor interactivo usa model-viewer desde Google CDN y necesita conexión a internet y un navegador compatible con WebGL. Si el visor o un modelo no se carga, se muestra un mensaje de error.

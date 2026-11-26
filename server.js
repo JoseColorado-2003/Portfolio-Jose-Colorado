@@ -1,5 +1,6 @@
 import { initToolbar, homeLinks } from './components/Toolbar/toolbar.js';
 import { loadCVComponents, cvLinks } from './components/CV/components/components.js';
+import { load3DComponents, threeDLinks } from './components/3D/components/components.js';
 
 const views = document.getElementById('views');
 const status = document.getElementById('view-status');
@@ -21,7 +22,7 @@ let activePage;
 
 const routes = {
   cv: {
-    links: [...cvLinks, { label: 'UGC', href: '?page=ugc', project: true }],
+    links: [...cvLinks, { label: 'UGC', href: '?page=ugc', project: true }, { label: '3D', href: '?page=3d', project: true }],
     brandHref: '#cv-perfil',
     async load(container) {
       const response = await fetch(new URL('./components/CV/CV.html', import.meta.url));
@@ -58,6 +59,27 @@ const routes = {
         document.head.append(stylesheet);
       });
       await import('./components/UGC/Components/components.js');
+    },
+  },
+  '3d': {
+    links: [...threeDLinks, { label: 'VOLVER', href: '?page=cv' }],
+    brandHref: '#3d-inicio',
+    async load(container) {
+      const response = await fetch(new URL('./components/3D/3D.html', import.meta.url));
+      if (!response.ok) throw new Error(`No se pudo cargar 3D: ${response.status}`);
+      const page = new DOMParser().parseFromString(await response.text(), 'text/html');
+      container.append(page.querySelector('main'));
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = new URL('./components/3D/3D.css', import.meta.url).href;
+      await Promise.all([
+        new Promise((resolve, reject) => {
+          stylesheet.addEventListener('load', resolve, { once: true });
+          stylesheet.addEventListener('error', () => reject(new Error('No se pudieron cargar los estilos de 3D')), { once: true });
+          document.head.append(stylesheet);
+        }),
+        load3DComponents(container),
+      ]);
     },
   },
 };

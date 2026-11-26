@@ -60,9 +60,9 @@ export function loadCVComponents(container) {
 if (document.body.dataset.view === 'cv') {
   try {
     await loadCVComponents(document);
-    const { initToolbar } = await import('../../components/Toolbar/toolbar.js');
+    const { initToolbar } = await import('../../Toolbar/toolbar.js');
     await initToolbar(document.querySelector('site-header'), {
-      links: [...cvLinks, { label: 'UGC', href: '../UGC/UGC.html', project: true }],
+      links: [...cvLinks, { label: 'UGC', href: '../UGC/UGC.html', project: true }, { label: '3D', href: '../3D/3D.html', project: true }],
       sections: document.querySelectorAll('main > * > section'),
       brandHref: '#cv-perfil',
     });
