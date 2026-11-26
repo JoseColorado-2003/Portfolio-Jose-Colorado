@@ -1,0 +1,179 @@
+.top {
+      --toolbar-background: transparent;
+      --toolbar-text-color: var(--ink);
+      --toolbar-logo-color: var(--toolbar-text-color);
+      position: fixed;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px 0;
+      background-color: var(--toolbar-background);
+      color: var(--toolbar-text-color);
+      transition: background-color .4s ease, color .4s ease;
+      opacity: 0.9;
+    }
+
+.nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+.brand {
+      display: inline-flex;
+      align-items: center;
+    }
+
+.brand-logo {
+      display: block;
+      width: 43px;
+      height: 48px;
+      background-color: var(--toolbar-logo-color);
+      -webkit-mask: url('../../Assets/Images/SVGs/Logo.svg') center / contain no-repeat;
+      mask: url('../../Assets/Images/SVGs/Logo.svg') center / contain no-repeat;
+      transition: background-color .4s ease;
+    }
+
+.links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: .78rem;
+    }
+
+.links a,
+.links .toolbar-project-toggle {
+      position: relative;
+      display: inline-block;
+    }
+
+.links .toolbar-project-toggle {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+
+.links .toolbar-project-toggle:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+
+.links a::after,
+.links .toolbar-project-toggle::after {
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      left: 0;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+
+.toolbar-projects {
+      position: relative;
+    }
+
+.toolbar-project-menu:not([hidden]) {
+      display: grid;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 100%;
+      padding: 12px 16px;
+      background: var(--toolbar-background);
+      color: var(--toolbar-text-color);
+    }
+
+.links .toolbar-project-menu a {
+      white-space: nowrap;
+    }
+
+.links a:hover,
+    .links a:focus-visible,
+    .links a[aria-current="location"] {
+      opacity: 1;
+    }
+
+.links a:hover::after,
+    .links a:focus-visible::after,
+    .links a[aria-current="location"]::after,
+    .links .toolbar-project-toggle[aria-expanded="true"]::after {
+      transform: scaleX(1);
+    }
+
+.toggle {
+      display: none;
+      background: none;
+      border: none;
+      padding: 8px 10px;
+      color: var(--toolbar-text-color);
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+      min-width: 42px;
+      min-height: 42px;
+      border-radius: 999px;
+    }
+
+.toggle:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+
+@media (prefers-reduced-motion: reduce) {
+      .links .toolbar-project-toggle::after {
+        transition: none;
+      }
+    }
+
+@media(max-width:800px) {
+      .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--toolbar-background);
+        color: var(--toolbar-text-color);
+        padding: 14px 24px 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: calc(100vh - 92px);
+        max-height: calc(100dvh - 92px);
+        overflow-y: auto;
+        transition: background-color .4s ease, color .4s ease;
+      }
+
+      .links.open {
+        display: flex;
+      }
+
+      .links a,
+      .links .toolbar-project-toggle {
+        padding: 12px 0;
+      }
+
+      .links .toolbar-project-toggle {
+        width: 100%;
+        text-align: left;
+      }
+
+      .toolbar-project-menu:not([hidden]) {
+        position: static;
+        margin-top: 8px;
+        padding: 0 0 0 20px;
+        background: transparent;
+      }
+
+      .toggle {
+        display: block;
+      }
+    }

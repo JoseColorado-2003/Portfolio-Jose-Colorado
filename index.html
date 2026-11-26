@@ -3,34 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Portafolio audiovisual, dirección creativa y producción UGC de José Miguel Colorado. Conectando conceptos abstractos con realidades tangibles.">
+    <meta name="description" content="Hoja de vida y portafolio de José Miguel Colorado Tapia, desarrollador de software y creador audiovisual.">
     <link rel="canonical" href="https://josecolorado-2003.github.io/Portfolio-Jose-Colorado/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://josecolorado-2003.github.io/Portfolio-Jose-Colorado/">
-    <meta property="og:title" content="José Miguel Colorado Tapia | Crear, Capturar y Editar">
-    <meta property="og:description" content="Portafolio audiovisual, dirección creativa y producción UGC. Conectando conceptos abstractos con realidades tangibles.">
+    <meta property="og:title" content="José Miguel Colorado Tapia | CV y portafolio">
+    <meta property="og:description" content="Hoja de vida y portafolio de José Miguel Colorado Tapia, desarrollador de software y creador audiovisual.">
     <meta property="og:image" content="https://josecolorado-2003.github.io/Portfolio-Jose-Colorado/Assets/Images/SVGs/Logo.svg">
     <meta property="og:image:type" content="image/svg+xml">
     <meta property="og:image:alt" content="Logotipo de José Miguel Colorado">
     <meta property="og:locale" content="es_CO">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="José Miguel Colorado Tapia | Crear, Capturar y Editar">
-    <meta name="twitter:description" content="Portafolio audiovisual, dirección creativa y producción UGC. Conectando conceptos abstractos con realidades tangibles.">
+    <meta name="twitter:title" content="José Miguel Colorado Tapia | CV y portafolio">
+    <meta name="twitter:description" content="Hoja de vida y portafolio de José Miguel Colorado Tapia, desarrollador de software y creador audiovisual.">
     <meta name="twitter:image" content="https://josecolorado-2003.github.io/Portfolio-Jose-Colorado/Assets/Images/SVGs/Logo.svg">
     <meta name="twitter:image:alt" content="Logotipo de José Miguel Colorado">
-    <title>José Miguel Colorado Tapia | Crear, Capturar y Editar</title>
+    <title>José Miguel Colorado Tapia | CV y portafolio</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" type="image/x-icon" href="./Assets/Icon/Logo.ico">
   </head>
-  <body class="loading-page">
-    <main class="loading-screen" role="status">
-      <span class="loading-logo" aria-hidden="true"></span>
-      <span class="loading-status">Cargando portafolio</span>
-    </main>
+  <body>
+    <div class="loading-page is-loading">
+      <div class="loading-screen">
+        <div class="loading-logo" role="img" aria-label="Cargando"></div>
+        <div id="loading-status" class="loading-status" role="status">Cargando…</div>
+      </div>
+    </div>
+    <div id="app" hidden>
+      <site-header></site-header>
+      <div id="view-status" role="status">Cargando contenido…</div>
+      <div id="views"></div>
+    </div>
     <noscript>
-      <p class="loading-fallback">Activa JavaScript o <a href="./home/home.html">entra al portafolio</a>.</p>
+      <p class="loading-fallback">Activa JavaScript para ver el CV o <a href="./components/UGC/UGC.html">entra al portafolio</a>.</p>
     </noscript>
     <script type="module" src="./server.js"></script>
   </body>
 </html>
-  

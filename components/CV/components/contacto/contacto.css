@@ -1,0 +1,118 @@
+.cv-contact {
+  --toolbar-background: var(--muted);
+  --toolbar-text-color: var(--ink);
+  --toolbar-logo-color: var(--ink);
+  background: var(--muted);
+  color: var(--ink);
+}
+
+.cv-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 45px;
+  align-items: end;
+}
+
+.cv-contact h2 {
+  margin: 20px 0;
+  font: 400 clamp(3rem, 8vw, 6rem)/.95 var(--serif);
+  letter-spacing: -.06em;
+}
+
+.cv-contact h2 em {
+  color: var(--brown);
+}
+
+.cv-contact-grid > div > p {
+  max-width: 480px;
+}
+
+.cv-contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.cv-contact-list small {
+  display: block;
+  margin-bottom: 7px;
+  font-size: .65rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.cv-contact-list a {
+  overflow-wrap: anywhere;
+}
+
+.cv-contact-list a:hover,
+.cv-contact-list a:focus-visible,
+.cv-contact-footer a {
+  text-decoration: underline;
+}
+
+.cv-contact-note {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 35px;
+  overflow: hidden;
+  background: var(--brown);
+  color: var(--paper);
+}
+
+.cv-contact-note h3 {
+  margin: 0;
+  font: 400 clamp(1.6rem, 4vw, 2.5rem) var(--serif);
+}
+
+.cv-contact-note p {
+  position: relative;
+  z-index: 1;
+  max-width: 290px;
+  font-size: .9rem;
+}
+
+.cv-contact-note span {
+  position: absolute;
+  right: 8px;
+  bottom: -34px;
+  color: color-mix(in srgb, var(--paper) 13%, transparent);
+  font: 400 10rem var(--serif);
+  letter-spacing: -.1em;
+}
+
+.cv-contact-footer {
+  padding: 18px 0;
+  border-top: 1px solid var(--ink);
+  background: var(--muted);
+  color: var(--ink);
+  font-size: .7rem;
+}
+
+.cv-contact-footer > .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .cv-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-contact-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-contact-footer > .wrap {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

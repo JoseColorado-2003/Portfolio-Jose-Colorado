@@ -1,0 +1,21 @@
+.cv-skills {
+  --toolbar-background: var(--brown);
+  --toolbar-text-color: var(--paper);
+  --toolbar-logo-color: var(--paper);
+  background: var(--brown);
+  color: var(--paper);
+}
+.cv-skills .eyebrow { color: var(--paper); }
+.cv-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+.cv-skills-grid article { border-top: 1px solid currentColor; padding-top: 20px; }
+.cv-skills-grid h3 { margin: 0; font: 400 1.5rem var(--serif); }
+@media (max-width: 800px) {
+  .cv-skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .cv-skills-grid { grid-template-columns: 1fr; }
+}
