@@ -1,4 +1,5 @@
 import { loadSharedContact } from '../../Contact/contact.js';
+import { initScrollReveal } from '../../scroll-reveal.js';
 
 const componentFolders = {
   'hero-section': 'Hero',
@@ -9,20 +10,6 @@ const componentFolders = {
   'experience-section': 'Experience',
   'pricing-section': 'Pricing',
 };
-
-const revealSelectors = [
-  '.wrap > .head',
-  '.hero-grid > *',
-  '.niche',
-  '.format',
-  '.tarjeta-trabajo',
-  '.value-item',
-  '.experience-card',
-  '.price-row',
-  '.terms',
-  '.contact > .wrap > .eyebrow',
-  '.contact-grid > *',
-];
 
 class PortfolioComponent extends HTMLElement {
   connectedCallback() {
@@ -98,72 +85,7 @@ instagramScript.async = true;
 instagramScript.src = 'https://www.instagram.com/embed.js';
 document.body.append(instagramScript);
 
-const sections = Array.from(document.querySelector('hero-section').closest('main').querySelectorAll(':scope > * > section'));
-const exitTimers = new Map();
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-if (!reducedMotion.matches && 'IntersectionObserver' in window) {
-  sections.forEach((section) => {
-    const revealItems = new Set(
-      revealSelectors.flatMap((selector) => Array.from(section.querySelectorAll(selector)))
-    );
-
-    Array.from(revealItems).forEach((item, index) => {
-      item.classList.add('scroll-reveal-item');
-      item.style.setProperty('--reveal-index', index);
-    });
-  });
-
-  const resetDelay = 1100;
-  const updateActiveSection = () => {
-    const viewportCenter = window.innerHeight / 2;
-    const activeSection = sections.find((section) => {
-      const bounds = section.getBoundingClientRect();
-      return bounds.top <= viewportCenter && bounds.bottom >= viewportCenter;
-    });
-
-    sections.forEach((section) => {
-      const wasActive = section.classList.contains('scroll-reveal-active');
-      const isActive = section === activeSection;
-      const exitTimer = exitTimers.get(section);
-
-      if (isActive) {
-        if (exitTimer) {
-          window.clearTimeout(exitTimer);
-          exitTimers.delete(section);
-        }
-
-        section.classList.remove('scroll-reveal-exiting');
-        section.classList.add('scroll-reveal-active');
-      } else if (wasActive) {
-        section.classList.remove('scroll-reveal-active');
-        section.classList.add('scroll-reveal-exiting');
-        exitTimers.set(section, window.setTimeout(() => {
-          section.classList.remove('scroll-reveal-exiting');
-          exitTimers.delete(section);
-        }, resetDelay));
-      }
-    });
-  };
-
-  let observer;
-  const observeSections = () => {
-    if (observer) {
-      observer.disconnect();
-    }
-
-    const centerOffset = Math.floor(window.innerHeight * 0.45);
-    observer = new IntersectionObserver(updateActiveSection, {
-      rootMargin: `-${centerOffset}px 0px -${centerOffset}px 0px`,
-      threshold: 0,
-    });
-
-    sections.forEach((section) => observer.observe(section));
-  };
-
-  observeSections();
-  window.addEventListener('resize', observeSections, { passive: true });
-}
+initScrollReveal(document.querySelector('hero-section').closest('main').parentElement);
 
 await Promise.all([
   import('./Niches/niches.js'),

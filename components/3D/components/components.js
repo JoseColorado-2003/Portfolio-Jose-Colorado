@@ -1,5 +1,6 @@
 import { initProyectos } from './proyectos/proyectos.js';
 import { loadSharedContact } from '../../Contact/contact.js';
+import { initScrollReveal } from '../../scroll-reveal.js';
 
 const componentFolders = {
   'three-inicio-section': 'inicio',
@@ -45,9 +46,10 @@ Object.keys(componentFolders).forEach((tagName) => {
   customElements.define(tagName, class extends ThreeDComponent {});
 });
 
-export function load3DComponents(container) {
+export async function load3DComponents(container) {
   const components = container.querySelectorAll(Object.keys(componentFolders).join(','));
-  return Promise.all([...Array.from(components, (component) => component.loadPromise), loadSharedContact(container)]);
+  await Promise.all([...Array.from(components, (component) => component.loadPromise), loadSharedContact(container)]);
+  initScrollReveal(container);
 }
 
 if (document.body.dataset.view === '3d') {

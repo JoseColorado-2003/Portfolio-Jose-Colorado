@@ -32,6 +32,30 @@ body {
   line-height: 1.6;
 }
 
+.scroll-reveal-item.scroll-reveal-item {
+  opacity: 0;
+  transform: translate3d(48px, 0, 0);
+  transition: opacity .65s ease, transform .75s cubic-bezier(.22, .61, .36, 1);
+}
+
+.scroll-reveal-item.scroll-reveal-active,
+.scroll-reveal-item:focus-within {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-reveal-item.scroll-reveal-active {
+  transition-delay: min(calc(var(--reveal-index, 0) * 70ms), 350ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal-item.scroll-reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;

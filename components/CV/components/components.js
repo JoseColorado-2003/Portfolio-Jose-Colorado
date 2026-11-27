@@ -1,4 +1,5 @@
 import { loadSharedContact } from '../../Contact/contact.js';
+import { initScrollReveal } from '../../scroll-reveal.js';
 
 const componentFolders = {
   'cv-perfil-section': 'perfil',
@@ -53,9 +54,10 @@ Object.keys(componentFolders).forEach((tagName) => {
   customElements.define(tagName, class extends CVComponent {});
 });
 
-export function loadCVComponents(container) {
+export async function loadCVComponents(container) {
   const components = container.querySelectorAll(Object.keys(componentFolders).join(','));
-  return Promise.all([...Array.from(components, (component) => component.loadPromise), loadSharedContact(container)]);
+  await Promise.all([...Array.from(components, (component) => component.loadPromise), loadSharedContact(container)]);
+  initScrollReveal(container);
 }
 
 if (document.body.dataset.view === 'cv') {
