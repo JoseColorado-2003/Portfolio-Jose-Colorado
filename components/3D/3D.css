@@ -1,6 +1,5 @@
 three-inicio-section,
-three-proyectos-section,
-three-contacto-section {
+three-proyectos-section {
   display: block;
 }
 
@@ -9,8 +8,7 @@ three-contacto-section {
 }
 
 .three-hero,
-.three-work,
-.three-contact {
+.three-work {
   padding: clamp(110px, 12vw, 170px) 0;
 }
 

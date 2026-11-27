@@ -6,9 +6,7 @@ formats-section,
 work-section,
 value-section,
 experience-section,
-pricing-section,
-contact-section,
-site-footer {
+pricing-section {
   display: block;
 }
 
@@ -85,8 +83,7 @@ site-footer {
   }
 }
 
-.facts small,
-.contact small {
+.facts small {
   display: block;
   color: var(--paper);
   font-size: .65rem;

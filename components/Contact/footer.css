@@ -1,4 +1,4 @@
-footer {
+.contact-footer {
       background: var(--muted);
       border-top: 1px solid var(--ink);
       color: var(--ink);
@@ -14,4 +14,10 @@ footer {
 
 .foot a {
       border-bottom: 1px solid currentColor;
+    }
+
+@media (max-width: 480px) {
+      .foot {
+        display: block;
+      }
     }

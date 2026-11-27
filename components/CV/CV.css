@@ -2,8 +2,7 @@ site-header,
 cv-perfil-section,
 cv-experiencia-section,
 cv-educacion-section,
-cv-habilidades-section,
-cv-contacto-section {
+cv-habilidades-section {
   display: block;
 }
 

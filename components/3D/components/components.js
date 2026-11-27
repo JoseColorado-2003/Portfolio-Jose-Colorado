@@ -1,9 +1,9 @@
 import { initProyectos } from './proyectos/proyectos.js';
+import { loadSharedContact } from '../../Contact/contact.js';
 
 const componentFolders = {
   'three-inicio-section': 'inicio',
   'three-proyectos-section': 'proyectos',
-  'three-contacto-section': 'contacto',
 };
 
 export const threeDLinks = [
@@ -47,7 +47,7 @@ Object.keys(componentFolders).forEach((tagName) => {
 
 export function load3DComponents(container) {
   const components = container.querySelectorAll(Object.keys(componentFolders).join(','));
-  return Promise.all(Array.from(components, (component) => component.loadPromise));
+  return Promise.all([...Array.from(components, (component) => component.loadPromise), loadSharedContact(container)]);
 }
 
 if (document.body.dataset.view === '3d') {

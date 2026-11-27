@@ -1,9 +1,10 @@
+import { loadSharedContact } from '../../Contact/contact.js';
+
 const componentFolders = {
   'cv-perfil-section': 'perfil',
   'cv-experiencia-section': 'experiencia',
   'cv-educacion-section': 'educacion',
   'cv-habilidades-section': 'habilidades',
-  'cv-contacto-section': 'contacto',
 };
 
 export const cvLinks = [
@@ -54,7 +55,7 @@ Object.keys(componentFolders).forEach((tagName) => {
 
 export function loadCVComponents(container) {
   const components = container.querySelectorAll(Object.keys(componentFolders).join(','));
-  return Promise.all(Array.from(components, (component) => component.loadPromise));
+  return Promise.all([...Array.from(components, (component) => component.loadPromise), loadSharedContact(container)]);
 }
 
 if (document.body.dataset.view === 'cv') {

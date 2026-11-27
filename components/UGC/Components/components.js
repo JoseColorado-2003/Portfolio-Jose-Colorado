@@ -1,3 +1,5 @@
+import { loadSharedContact } from '../../Contact/contact.js';
+
 const componentFolders = {
   'hero-section': 'Hero',
   'niches-section': 'Niches',
@@ -6,8 +8,6 @@ const componentFolders = {
   'value-section': 'Value',
   'experience-section': 'Experience',
   'pricing-section': 'Pricing',
-  'contact-section': 'Contact',
-  'site-footer': 'Footer',
 };
 
 const revealSelectors = [
@@ -70,7 +70,17 @@ Object.keys(componentFolders).forEach((tagName) => {
 });
 
 const components = Array.from(document.querySelectorAll(Object.keys(componentFolders).join(',')));
-await Promise.all(components.map((component) => component.loadPromise));
+try {
+  await Promise.all([...components.map((component) => component.loadPromise), loadSharedContact(document)]);
+} catch (error) {
+  if (document.body.dataset.view === 'ugc') {
+    const message = document.createElement('p');
+    message.setAttribute('role', 'alert');
+    message.textContent = 'No se pudo cargar UGC. Recarga la página para volver a intentarlo.';
+    document.body.prepend(message);
+  }
+  throw error;
+}
 
 const sharedStylesheet = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).find((link) => {
   const href = (link.getAttribute('href') || '').replace(/\\/g, '/');
@@ -88,7 +98,7 @@ instagramScript.async = true;
 instagramScript.src = 'https://www.instagram.com/embed.js';
 document.body.append(instagramScript);
 
-const sections = Array.from(document.querySelectorAll('main > * > section'));
+const sections = Array.from(document.querySelector('hero-section').closest('main').querySelectorAll(':scope > * > section'));
 const exitTimers = new Map();
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -158,7 +168,6 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window) {
 await Promise.all([
   import('./Niches/niches.js'),
   import('./Work/work.js'),
-  import('./Footer/footer.js'),
 ]);
 
 if (document.body.dataset.view === 'home') {

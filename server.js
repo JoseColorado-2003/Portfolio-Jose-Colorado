@@ -28,7 +28,7 @@ const routes = {
       const response = await fetch(new URL('./components/CV/CV.html', import.meta.url));
       if (!response.ok) throw new Error(`No se pudo cargar el CV: ${response.status}`);
       const page = new DOMParser().parseFromString(await response.text(), 'text/html');
-      container.append(page.querySelector('main'));
+      container.append(page.querySelector('main'), page.querySelector('site-footer'));
       const stylesheet = document.createElement('link');
       stylesheet.rel = 'stylesheet';
       stylesheet.href = new URL('./components/CV/CV.css', import.meta.url).href;
@@ -68,7 +68,7 @@ const routes = {
       const response = await fetch(new URL('./components/3D/3D.html', import.meta.url));
       if (!response.ok) throw new Error(`No se pudo cargar 3D: ${response.status}`);
       const page = new DOMParser().parseFromString(await response.text(), 'text/html');
-      container.append(page.querySelector('main'));
+      container.append(page.querySelector('main'), page.querySelector('site-footer'));
       const stylesheet = document.createElement('link');
       stylesheet.rel = 'stylesheet';
       stylesheet.href = new URL('./components/3D/3D.css', import.meta.url).href;
