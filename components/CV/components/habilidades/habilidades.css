@@ -1,8 +1,8 @@
 .cv-skills {
-  --toolbar-background: var(--brown);
+  --toolbar-background: var(--red);
   --toolbar-text-color: var(--paper);
   --toolbar-logo-color: var(--paper);
-  background: var(--brown);
+  background: var(--red);
   color: var(--paper);
 }
 .cv-skills .eyebrow { color: var(--paper); }

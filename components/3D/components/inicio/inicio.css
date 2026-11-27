@@ -1,10 +1,24 @@
 .three-hero {
   --toolbar-background: var(--paper);
   --toolbar-text-color: var(--ink);
+  --toolbar-logo-color: var(--ink);
   min-height: 100vh;
   display: grid;
   align-items: center;
   background: var(--paper);
+}
+
+.three-hero h1 em {
+  color: var(--indigo);
+}
+
+.three-hero .three-button {
+  background: var(--red);
+}
+
+.three-hero .three-button:hover,
+.three-hero .three-button:focus-visible {
+  background: var(--brown);
 }
 
 .three-hero-grid {

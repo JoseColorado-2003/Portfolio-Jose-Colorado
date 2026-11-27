@@ -1,9 +1,16 @@
 .portfolio-3d .three-work {
-  --toolbar-background: #e8e2d9;
-  --toolbar-text-color: var(--ink);
+  --toolbar-background: var(--green);
+  --toolbar-text-color: var(--paper);
+  --toolbar-logo-color: var(--paper);
   scroll-margin-top: 0;
   padding: 105px 0;
-  background: #e8e2d9;
+  background: var(--green);
+  color: var(--paper);
+}
+
+.three-work > .wrap > .three-heading .three-kicker,
+.three-work-grid > div > .three-kicker {
+  color: var(--paper);
 }
 
 .three-heading {
@@ -29,6 +36,7 @@
 .three-viewer-panel {
   padding: 22px;
   background: var(--paper);
+  color: var(--ink);
 }
 
 .three-viewer-top {
@@ -96,7 +104,7 @@
   gap: 8px;
   padding: 22px 0;
   border: 0;
-  border-top: 1px solid #ada398;
+  border-top: 1px solid currentColor;
   background: transparent;
   color: inherit;
   text-align: left;
@@ -114,7 +122,8 @@
 .three-project:hover strong,
 .three-project:focus-visible strong,
 .three-project[aria-pressed="true"] strong {
-  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: .2em;
 }
 
 @media (max-width: 800px) {

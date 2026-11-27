@@ -1,8 +1,8 @@
 .cv-experience {
-  --toolbar-background: var(--ink);
+  --toolbar-background: var(--green);
   --toolbar-text-color: var(--paper);
   --toolbar-logo-color: var(--paper);
-  background: var(--ink);
+  background: var(--green);
   color: var(--paper);
 }
 .cv-experience .eyebrow { color: var(--paper); }

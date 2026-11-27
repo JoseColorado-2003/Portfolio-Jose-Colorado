@@ -1,5 +1,8 @@
 .cv-education {
+  --toolbar-background: var(--indigo);
+  --toolbar-text-color: var(--paper);
+  --toolbar-logo-color: var(--paper);
   background: var(--paper);
   color: var(--ink);
 }
-.cv-education .eyebrow { color: var(--ink); }
+.cv-education .eyebrow { color: var(--indigo); }
